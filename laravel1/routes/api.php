@@ -16,3 +16,17 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+//Get All employees
+Route::get('employees','EmployeeController@getEmployee');
+
+//get specefique employee
+Route::get('employee/{id}','EmployeeController@getEmployeeByid');
+
+//add employee
+Route::post('addEmployee','EmployeeController@addEmployee');
+//Update Employee
+Route::post('updateEmployee/{id}','EmployeeController@updateEmployee');
+//delete Employee
+Route::delete('deleteEmployee/{id}','EmployeeController@deleteEmployee');
