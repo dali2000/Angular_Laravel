@@ -8,10 +8,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InscriComponent } from './components/inscri/inscri.component';
 import { FormsModule } from '@angular/forms';
+import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 
 const appRoutes:Routes = [
   { path: 'Employee', component:EmployeesComponent },
-  { path: 'Inscri', component:InscriComponent}
+  { path: 'Inscri', component:InscriComponent},
+  { path: 'edit/:id', component:EmployeeEditComponent}
 ];
 
 @NgModule({
@@ -19,7 +21,8 @@ const appRoutes:Routes = [
     AppComponent,
     EmployeesComponent,
     NavbarComponent,
-    InscriComponent
+    InscriComponent,
+    EmployeeEditComponent
   ],
   imports: [
     BrowserModule,

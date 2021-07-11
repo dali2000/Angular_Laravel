@@ -20,6 +20,11 @@ export class EmployeesComponent implements OnInit {
       this.employees = res;
     });
   }
+  deleteData(id){
+    this.dataService.deleteData(id).subscribe(res =>{
+      this.getEmployeesData();
+    })
+  }
 
 
 }
