@@ -9,11 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { InscriComponent } from './components/inscri/inscri.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
+import { UserComponent } from './components/user/user.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 const appRoutes:Routes = [
   { path: 'Employee', component:EmployeesComponent },
+  { path: 'User', component:UserComponent },
   { path: 'Inscri', component:InscriComponent},
-  { path: 'edit/:id', component:EmployeeEditComponent}
+  { path: 'edit/:id', component:EmployeeEditComponent},
+  { path: 'EditUser/:id', component:UserEditComponent}
 ];
 
 @NgModule({
@@ -22,7 +26,10 @@ const appRoutes:Routes = [
     EmployeesComponent,
     NavbarComponent,
     InscriComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
+    UserComponent,
+    UserEditComponent,
+    
   ],
   imports: [
     BrowserModule,
