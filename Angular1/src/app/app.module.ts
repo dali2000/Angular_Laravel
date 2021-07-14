@@ -11,13 +11,16 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { UserComponent } from './components/user/user.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { ConComponent } from './components/con/con.component';
 
 const appRoutes:Routes = [
+ 
   { path: 'Employee', component:EmployeesComponent },
   { path: 'User', component:UserComponent },
   { path: 'Inscri', component:InscriComponent},
   { path: 'edit/:id', component:EmployeeEditComponent},
-  { path: 'EditUser/:id', component:UserEditComponent}
+  { path: 'EditUser/:id', component:UserEditComponent},
+  { path: 'con' , component:ConComponent}
 ];
 
 @NgModule({
@@ -29,6 +32,7 @@ const appRoutes:Routes = [
     EmployeeEditComponent,
     UserComponent,
     UserEditComponent,
+    ConComponent,
     
   ],
   imports: [
