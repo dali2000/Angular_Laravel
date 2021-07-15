@@ -1,15 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" routerLink="/User">User <span class="sr-only">(current)</span></a>
-        <a class="nav-link active" routerLink="/Employee">Employee <span class="sr-only">(current)</span></a>
-        <a class="nav-link" routerLink="/Inscri">Inscri</a>
-        <a class="nav-link" routerLink="/con">Connexion</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLink="/User">User <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/Employee">Employee <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/addServer">Add Server <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/Inscri">Inscri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/con">Connexion</a>
+          </li>
+        </ul>
+      </span>
     </div>
   </nav>

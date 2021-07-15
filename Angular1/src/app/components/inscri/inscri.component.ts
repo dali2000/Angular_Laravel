@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { Employee } from 'src/app/employee';
 import { User } from 'src/app/user';
 
 @Component({
@@ -15,7 +14,7 @@ export class InscriComponent implements OnInit {
   user1 = new User();
   ngOnInit(): void {
   }
-  submit(){
+  add(){
     this.dataService.submit(this.user1).subscribe(res =>{
       console.log(res);
     })

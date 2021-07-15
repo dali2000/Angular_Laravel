@@ -2,7 +2,8 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Name</th>
+            <th>FirstName</th>
+            <th>lastName</th>
             <th>Email</th>
             
             <th>Action</th>
@@ -11,7 +12,8 @@
     <tbody>
         <tr *ngFor="let us of user">
             <th scope="row">{{ us.id }}</th>
-            <td>{{ us.name }}</td>
+            <td>{{ us.first_name }}</td>
+            <td>{{ us.last_name }}</td>
             <td>{{ us.email }}</td>
             <td>
                 <button class="btn btn-danger btn-sm" (click)="deleteData(us.id)">delete</button>

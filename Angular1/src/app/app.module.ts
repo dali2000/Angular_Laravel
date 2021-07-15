@@ -7,11 +7,12 @@ import { importType } from '@angular/compiler/src/output/output_ast';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InscriComponent } from './components/inscri/inscri.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { UserComponent } from './components/user/user.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
-import { ConComponent } from './components/con/con.component';
+import { AddServerComponent } from './components/add-server/add-server.component';
+;
 
 const appRoutes:Routes = [
  
@@ -20,7 +21,8 @@ const appRoutes:Routes = [
   { path: 'Inscri', component:InscriComponent},
   { path: 'edit/:id', component:EmployeeEditComponent},
   { path: 'EditUser/:id', component:UserEditComponent},
-  { path: 'con' , component:ConComponent}
+  { path: 'addServer' , component:AddServerComponent},
+
 ];
 
 @NgModule({
@@ -32,14 +34,16 @@ const appRoutes:Routes = [
     EmployeeEditComponent,
     UserComponent,
     UserEditComponent,
-    ConComponent,
+    AddServerComponent,
+
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

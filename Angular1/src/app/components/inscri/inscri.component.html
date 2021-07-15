@@ -1,10 +1,17 @@
 <div class="box">
     <div class="container">
-        <form (ngSubmit)="submit()">
+        <form (ngSubmit)="add()">
             <div class="row form-group">
                 <div class="col-sm">
-                    <label for="">User Name</label>
-                    <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="user1.name" [ngModelOptions]="{standalone: true}">
+                    <label for="">first Name</label>
+                    <input type="text" class="form-control" placeholder="first Name" [(ngModel)]="user1.first_name" [ngModelOptions]="{standalone: true}">
+                </div>
+
+            </div>
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="user1.last_name" [ngModelOptions]="{standalone: true}">
                 </div>
 
             </div>
