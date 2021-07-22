@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserComponent } from './components/user/user.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AddServerComponent } from './components/add-server/add-server.component';
+import { Ec2Component } from './components/ec2/ec2.component';
+import { S3Component } from './components/s3/s3.component';
+import { SqsComponent } from './components/sqs/sqs.component';
 ;
 
 const appRoutes:Routes = [
@@ -21,7 +24,13 @@ const appRoutes:Routes = [
   { path: 'Inscri', component:InscriComponent},
 
   { path: 'EditUser/:id', component:UserEditComponent},
-  { path: 'addServer' , component:AddServerComponent},
+  { path: 'addServer' ,
+   component:AddServerComponent,
+   children: [
+     {path: 'ec2', component: Ec2Component},
+     {path: 's3', component: S3Component}
+   ]
+  },
 
 ];
 
@@ -35,6 +44,9 @@ const appRoutes:Routes = [
     UserComponent,
     UserEditComponent,
     AddServerComponent,
+    Ec2Component,
+    S3Component,
+    SqsComponent,
 
     
   ],

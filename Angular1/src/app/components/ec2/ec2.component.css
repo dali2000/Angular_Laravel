@@ -1,4 +1,4 @@
- input,textarea {
+input,textarea {
     padding: 0px 8px 4px 8px;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -13,10 +13,3 @@
     letter-spacing: 1px;
     outline-style: none;
 }
-.ng-invalid:not(form){
-    border-bottom:2px solid red;
-}
-.ng-valid:not(form){
-    border-bottom:2px solid green;
-}
-
