@@ -24,11 +24,11 @@
                     <label for="">Private Bucket</label>
                 </div>
                 <div class="col">
-                    <select name="region" id="" class="form-control" [(ngModel)]="s3form.Region" required>
+                    <select name="region" id="" class="form-control" [(ngModel)]="s3form.Region" required
+                        [ngModelOptions]="{standalone: true} ">
                         <option value="r1">Region1</option>
                         <option value="r2">Region2</option>
                         <option value="r3">Region3</option>
-                        <option value="r4">Region4</option>
                     </select>
                 </div>
             </div>
@@ -37,8 +37,15 @@
 
 
 
-            <div class="">
-                <button type="submit" class="btn btn-primary" id="btnsign" [disabled]="!s3Form.valid">Next</button>
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" routerLink="" (click)="go('ec2')">Privous</button>
+                </div>
+
+
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </div>
             </div>
 
         </form>

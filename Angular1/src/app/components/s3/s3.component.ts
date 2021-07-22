@@ -18,11 +18,11 @@ export class S3Component implements OnInit {
   ngOnInit(): void {
   }
   go(cmp) {
-    this.router.navigate(['addServer/'+ cmp])
+    this.router.navigate(['addServer/' + cmp])
   }
   add() {
     console.log(this.s3form);
-    this.dataService.addS3(this.s3form).subscribe(res =>{
+    this.dataService.addS3(this.s3form).subscribe(res => {
       console.log(res);
     });
   }
