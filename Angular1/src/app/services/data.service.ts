@@ -7,22 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
   constructor(private httpClient:HttpClient) { }
-//emloyees
-  getData(){
-    return this.httpClient.get('http://127.0.0.1:8000/api/employees');
-  }
-  connect(data){
-    return this.httpClient.post('http://127.0.0.1:8000/oauth/token',data);
-  }
-  deleteData(id){
-    return this.httpClient.delete('http://127.0.0.1:8000deleteEmployee/'+id);
-  }
-  getEmployeeById(id){
-    return this.httpClient.get('http://127.0.0.1:8000/employee/'+id);
-  }
-  updateEmployee(id, data){
-    return this.httpClient.post('http://127.0.0.1:8000/updateEmployee/'+id,data);
-  }
+
 
 //user
 getDataUser(){
