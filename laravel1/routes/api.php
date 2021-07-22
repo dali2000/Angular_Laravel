@@ -19,18 +19,7 @@ use Illuminate\Http\Request;
 // });
 
 
-//Get All employees
-Route::get('employees','EmployeeController@getEmployee');
 
-//get specefique employee
-Route::get('employee/{id}','EmployeeController@getEmployeeByid');
-
-//add employee
-Route::post('addEmployee','EmployeeController@addEmployee');
-//Update Employee
-Route::post('updateEmployee/{id}','EmployeeController@updateEmployee');
-//delete Employee
-Route::delete('deleteEmployee/{id}','EmployeeController@deleteEmployee');
 
 
 
@@ -69,10 +58,3 @@ Route::get('getS3ById/{id}','S3Controller@getS3ById');
 Route::post('addS3','S3Controller@addS3');
 Route::put('updateS3/{id}','S3Controller@updateS3');
 
-
-//auth
-Route::post('login','AuthController@login');
-Route::post('signup','AuthController@signup');
-Route::post('logout','AuthController@login');
-Route::post('refresh','AuthController@refresh');
-Route::post('me','AuthController@me');
