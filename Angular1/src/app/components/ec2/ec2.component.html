@@ -1,7 +1,7 @@
 <div class="card">
-    <div class="card-header">Ec2</div>
+    <div class="card-header" >Ec2</div>
     <div class="card-body">
-        <form #ec2Form=ngForm (ngSubmit)="add()" class="form-group">
+        <form #ec2Form="ngForm"  class="form-group">
             <div class="row">
                 <div class="col">
                     <label for="">Server Name</label>
@@ -47,8 +47,10 @@
             </div>
             <br>
             <div class="">
-                <button type="submit" class="btn btn-primary" id="btnsign" [disabled]="!ec2Form.valid"
+                <a routerLink="" (click)="go('s3')">
+                    <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!ec2Form.valid" (click)="add()"
                     >Next</button>
+                </a>
             </div>
 
         </form>

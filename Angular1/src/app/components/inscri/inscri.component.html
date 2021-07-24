@@ -1,6 +1,6 @@
 <div class="box">
     <div class="container">
-        <form #signForm=ngForm (ngSubmit)="add()">
+        <form #signForm="ngForm" (ngSubmit)="add()">
             <div class="row form-group">
                 <div class="col-sm">
                     <label for="">first Name</label>
@@ -26,8 +26,7 @@
             <div class="row form-group">
                 <div class="col-md">
                     <label for="password">password</label>
-                    <input [type]="password" placeholder="password" [(ngModel)]="form.password" name="password" id="password" required>
-                    <i class="bi bi-eye-slash" id="togglePassword" name="eye" (click)="togglePassword()"></i>
+                    <input type="password" placeholder="password" [(ngModel)]="form.password" name="password" id="password" required>
                 </div>
             </div>
             <div class="">

@@ -27,11 +27,14 @@ updateUser(id, data){
 }
 
 //s3
-addS3(data){
-  return this.httpClient.post('http://127.0.0.1:8000/addS3',data);
+addCdn(data){
+  return this.httpClient.post('http://127.0.0.1:8000/addCdn',data);
 }
 addec2(data){
   return this.httpClient.post('http://127.0.0.1:8000/addEc3',data);
+}
+addSqs(data){
+  return this.httpClient.post('http://127.0.0.1:8000/addSqs',data);
 }
 
 

@@ -18,20 +18,6 @@ export class InscriComponent implements OnInit {
     password:null
   }
 
-  password :String ="password";
-  passwordShown :boolean = false;
-
-  public togglePassword(){
-    if(this.passwordShown){
-      this.passwordShown = false;
-      this.password= "password";
-    }else{
-      this.passwordShown = true;
-      this.password = "password";
-    }
-  }
-
-
   ngOnInit(): void {
   }
   add(){

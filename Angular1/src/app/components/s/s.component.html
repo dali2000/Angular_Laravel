@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-header">Sqs</div>
+    <div class="card-body">
+        <form #form="ngForm" >
+            <div class="row">
+                <div class="col">
+                    <label for="">Quere Name</label>
+                    <input type="text" placeholder="QuereName" [(ngModel)]="form.Quere_Name" name="Quere_Name"  required>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label for="">Region</label>
+                    <br>
+                    <select name="Region" id="" [(ngModel)]="form.Region" name="Region" required class="form-control">
+                        <option value="r1">Region1</option>
+                        <option value="r2">Region2</option>
+                        <option value="r3">Region3</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <!-- <div class="row">
+                <div class="col-4">
+                    <label for="">Veera</label>
+
+                </div>
+                <div class="col-4">
+                    <input type="checkbox" name="Veera" id=""  [(ngModel)]="form.Veera" >
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                    <label for="">APrime</label>
+
+                </div>
+                <div class="col-4">
+                    <input type="checkbox" name="APrime" id=""  [(ngModel)]="form.APrime" >
+
+                </div>
+            </div> -->
+            
+            
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" routerLink="" (click)="go('s3')">Privous</button>
+                </div>
+
+
+                <div class="col-4">
+                    <a routerLink="" (click)="go('sqs')">
+                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!form.valid" (click)="add(form.value)"
+                        >Next</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

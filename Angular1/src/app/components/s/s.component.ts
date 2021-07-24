@@ -1,29 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
-
 @Component({
-  selector: 'app-s3',
-  templateUrl: './s3.component.html',
-  styleUrls: ['./s3.component.css']
+  selector: 'app-s',
+  templateUrl: './s.component.html',
+  styleUrls: ['./s.component.css']
 })
-export class S3Component implements OnInit {
+export class SComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router) { }
-  public s3form = {
-    PrivateBucket: null,
-    PublicBucket: null,
-    Region: null
-  }
+
   ngOnInit(): void {
   }
   go(cmp) {
     this.router.navigate(['addServer/' + cmp])
   }
-  addCdn() {
-    
-    this.dataService.addCdn(this.s3form).subscribe(res => {
+  add(val) {
+    this.dataService.addSqs(val).subscribe(res => {
       console.log(res);
     });
+
   }
 }

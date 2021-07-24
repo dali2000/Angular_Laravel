@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">S3/CDN</div>
     <div class="card-body">
-        <form #s3Form=ngForm (ngSubmit)="add()" class="form-group">
+        <form #s3Form="ngForm" class="form-group">
 
             <div class="row">
                 <div class="col">
@@ -21,10 +21,10 @@
             <br>
             <div class="row">
                 <div class="col">
-                    <label for="">Private Bucket</label>
+                    <label for="">Region</label>
                 </div>
                 <div class="col">
-                    <select name="region" id="" class="form-control" [(ngModel)]="s3form.Region" required
+                    <select name="Region" id="" class="form-control" [(ngModel)]="s3form.Region" required
                         [ngModelOptions]="{standalone: true} ">
                         <option value="r1">Region1</option>
                         <option value="r2">Region2</option>
@@ -44,7 +44,10 @@
 
 
                 <div class="col-4">
-                    <button type="submit" class="btn btn-primary">Next</button>
+                    <a routerLink="" (click)="go('sqs')">
+                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3Form.valid" (click)="addCdn()"
+                        >Next</button>
+                    </a>
                 </div>
             </div>
 
