@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ec3 extends Model
+class cdn extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['ServerName','Type','Storage','Firwall','Machine'];
-
+    protected $fillable = ['PrivateBucket','PublicBucket','Region'];
+    
     public function Server()
     {
         return $this->hasOne(Server::class);

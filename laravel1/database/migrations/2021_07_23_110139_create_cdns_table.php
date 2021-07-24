@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateS3STable extends Migration
+class CreateCdnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateS3STable extends Migration
      */
     public function up()
     {
-        Schema::create('s3s', function (Blueprint $table) {
+        Schema::create('cdns', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('PrivateBucket');
             $table->string('PublicBucket');
@@ -29,6 +29,6 @@ class CreateS3STable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('s3_s');
+        Schema::dropIfExists('cdns');
     }
 }
