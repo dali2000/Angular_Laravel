@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class cdn extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['PrivateBucket','PublicBucket','Region'];
+    protected $fillable = ['idServer','PrivateBucket','PublicBucket','Region'];
     
     public function Server()
     {

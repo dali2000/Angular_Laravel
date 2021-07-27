@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Server extends Model
 {
+    public $timestamps = false;
+    protected $fillable = ['name'];
+
     public function ec2()
     {
         return $this->hasOne(Ec3::class);

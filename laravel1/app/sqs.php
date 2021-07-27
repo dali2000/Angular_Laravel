@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class sqs extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['Quere_Name','Region'];
+    protected $fillable = ['idServer','Quere_Name','Region'];
     
     
     public function Server()

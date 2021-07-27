@@ -22,6 +22,6 @@ export class UserComponent implements OnInit {
   deleteData(id){
     this.dataService.deleteUserData(id).subscribe(res =>{
       this.getUserData();
-    })
+    });
   }
 }

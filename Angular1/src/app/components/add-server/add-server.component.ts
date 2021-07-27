@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,RouterModule } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-add-server',
   templateUrl: './add-server.component.html',
@@ -7,11 +8,17 @@ import { Router,RouterModule } from '@angular/router';
 })
 export class AddServerComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  public server = {
+    id: 1,
+    name: 'server'
+  };
+  id = "9"
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  go(cmp){
-    this.router.navigate(['addServer/'+cmp])
+  go(cmp) {
+    this.router.navigate(['addServer/' + cmp])
   }
+
 }

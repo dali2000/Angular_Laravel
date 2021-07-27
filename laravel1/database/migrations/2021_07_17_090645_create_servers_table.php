@@ -15,12 +15,7 @@ class CreateServersTable extends Migration
     {
         Schema::create('servers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('idEc2');
-            $table->integer('idS3');
-            $table->integer('idSqs');
-            // $table->foreign('idEc2')->references('id')->on('ec3s');
-            // $table->foreign('idS3')->references('id')->on('s3s');
-            // $table->foreign('idSqs')->references('id')->on('sqs');
+            $table->string('name');
             $table->timestamps();
         });
     }

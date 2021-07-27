@@ -15,9 +15,11 @@ class CreateCdnsTable extends Migration
     {
         Schema::create('cdns', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('idServer');
             $table->string('PrivateBucket');
             $table->string('PublicBucket');
             $table->enum('Region',['r1','r2','r3']);
+            $table->foreign('idServer')->references('id')->on('servers')->onDelete("cascade");;
             $table->timestamps();
         });
     }

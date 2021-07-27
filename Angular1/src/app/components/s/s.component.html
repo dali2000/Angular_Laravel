@@ -2,10 +2,16 @@
     <div class="card-header">Sqs</div>
     <div class="card-body">
         <form #form="ngForm" >
+            {{id}}
+            <div class="col">
+                <label for="">idServer</label>
+                <input type="text" class="form-control" placeholder="idServer" name="idServer"
+                    [(ngModel)]="s.idServer" [ngModelOptions]="{standalone: true}" required disabled>
+            </div>
             <div class="row">
                 <div class="col">
                     <label for="">Quere Name</label>
-                    <input type="text" placeholder="QuereName" [(ngModel)]="form.Quere_Name" name="Quere_Name"  required>
+                    <input type="text" placeholder="QuereName" [(ngModel)]="s.Quere_Name" name="Quere_Name"  required>
                 </div>
             </div>
             <br>
@@ -13,7 +19,7 @@
                 <div class="col">
                     <label for="">Region</label>
                     <br>
-                    <select name="Region" id="" [(ngModel)]="form.Region" name="Region" required class="form-control">
+                    <select name="Region" id="" [(ngModel)]="s.Region" name="Region" required class="form-control">
                         <option value="r1">Region1</option>
                         <option value="r2">Region2</option>
                         <option value="r3">Region3</option>
@@ -52,8 +58,29 @@
 
                 <div class="col-4">
                     <a routerLink="" (click)="go('sqs')">
-                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!form.valid" (click)="add(form.value)"
-                        >Next</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" [disabled]="!form.valid" (click)="add(s)">
+                            Next
+                          </button>
+                          
+                          <!-- Modal -->
+                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="staticBackdropLabel">Serveur Crée</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>Ec2 created seccessfuli</h6>
+                                    <h6>S3/Cdn created seccessfuli</h6>
+                                    <h6>Sqs created seccessfuli</h6>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     </a>
                 </div>
             </div>

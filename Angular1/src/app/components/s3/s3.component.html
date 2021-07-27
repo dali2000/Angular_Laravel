@@ -1,12 +1,17 @@
 <div class="card">
     <div class="card-header">S3/CDN</div>
     <div class="card-body">
-        <form #s3Form="ngForm" class="form-group">
-
+        {{id}}
+        <form #s3form="ngForm" class="form-group">
+            <div class="col">
+                <label for="">idServer</label>
+                <input type="text" class="form-control" placeholder="idServer" name="idServer"
+                    [(ngModel)]="s3.idServer" [ngModelOptions]="{standalone: true}" required disabled>
+            </div>
             <div class="row">
                 <div class="col">
                     <label for="">Public Bucket</label>
-                    <input type="text" class="form-control" [(ngModel)]="s3form.PublicBucket"
+                    <input type="text" class="form-control" [(ngModel)]="s3.PublicBucket"
                         [ngModelOptions]="{standalone: true} " placeholder="Public Bucket" required>
                 </div>
             </div>
@@ -14,7 +19,7 @@
             <div class="row">
                 <div class="col">
                     <label for="">Private Bucket</label>
-                    <input type="text" class="form-control" min="1000" max="10000" [(ngModel)]="s3form.PrivateBucket"
+                    <input type="text" class="form-control" min="1000" max="10000" [(ngModel)]="s3.PrivateBucket"
                         [ngModelOptions]="{standalone: true} " placeholder="Private Bucket" required>
                 </div>
             </div>
@@ -24,7 +29,7 @@
                     <label for="">Region</label>
                 </div>
                 <div class="col">
-                    <select name="Region" id="" class="form-control" [(ngModel)]="s3form.Region" required
+                    <select name="Region" id="" class="form-control" [(ngModel)]="s3.Region" required
                         [ngModelOptions]="{standalone: true} ">
                         <option value="r1">Region1</option>
                         <option value="r2">Region2</option>
@@ -45,7 +50,7 @@
 
                 <div class="col-4">
                     <a routerLink="" (click)="go('sqs')">
-                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3Form.valid" (click)="addCdn()"
+                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3form.valid" (click)="addCdn()"
                         >Next</button>
                     </a>
                 </div>

@@ -15,12 +15,14 @@ class CreateEc3sTable extends Migration
     {
         Schema::create('ec3s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('idServer');
             $table->string('ServerName');
-            $table->enum('Type',['type1','type2','type3']);
+            $table->enum('Type', ['type1', 'type2', 'type3']);
             $table->Integer('Storage');
-            $table->enum('Firwall',['f1','f2','f3']);
-            $table->enum('Machine',['m1','m2','m3']);
+            $table->enum('Firwall', ['f1', 'f2', 'f3']);
+            $table->enum('Machine', ['m1', 'm2', 'm3']);
             $table->timestamps();
+            $table->foreign('idServer')->references('id')->on('servers')->onDelete("cascade");;
         });
     }
 

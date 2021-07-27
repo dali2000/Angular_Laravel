@@ -54,8 +54,15 @@ Route::put('updateEc3/{id}', 'Ec3Controller@updateEc3');
 
 //S3
 Route::post('addCdn', 'CdnController@addS3');
-Route::get('getS3','CdnController@getS3');
-Route::get('getS3ById/{id}','CdnController@getS3ById');
-Route::put('updateS3/{id}','CdnController@updateS3');
+Route::get('getS3', 'CdnController@getS3');
+Route::get('getS3ById/{id}', 'CdnController@getS3ById');
+Route::put('updateS3/{id}', 'CdnController@updateS3');
 //sqs
-Route::post('addSqs','SqsController@addSqs');
+Route::post('addSqs', 'SqsController@addSqs');
+
+
+//server
+Route::post('addServer', 'ServerController@addServer');
+Route::get('getServerById/{id}', 'ServerController@getServerById');
+Route::get('getServers', 'ServerController@getServers');
+Route::delete('DeleteServer/{id}', 'ServerController@DeleteServer');

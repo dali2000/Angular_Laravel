@@ -1,7 +1,18 @@
+<form #Form="ngForm" (ngSubmit)="add1()">
+    <input type="text" class="form-control" placeholder="Server Name" name="name" [(ngModel)]="server.name"
+        [ngModelOptions]="{standalone: true}" required>
+    <input type="submit" class="btn btn-success" value="Add Server">
+</form>
+<br>
 <div class="card">
-    <div class="card-header" >Ec2</div>
+    <div class="card-header">Ec2</div>
     <div class="card-body">
-        <form #ec2Form="ngForm"  class="form-group">
+        <form #ec2Form="ngForm" class="form-group">
+            <div class="col">
+                <label for="">idServer</label>
+                <input type="text" class="form-control" placeholder="idServer" name="idServer"
+                    [(ngModel)]="ec2form.idServer" [ngModelOptions]="{standalone: true}" required disabled>
+            </div>
             <div class="row">
                 <div class="col">
                     <label for="">Server Name</label>
@@ -19,12 +30,13 @@
                 </div>
             </div>
             <div class="row">
-
-                <label for="">Storage:</label><br>
+                <label for="customRange1" class="form-label">Storage:</label>
                 <span>{{ec2form.Storage}}</span>
-                <input type="range" class="form-control" min="1000" max="10000" [(ngModel)]="ec2form.Storage"
-                    [ngModelOptions]="{standalone: true} " required>
+                <!-- <input type="range" class="form-control" min="1000" max="10000" [(ngModel)]="ec2form.Storage"
+                    [ngModelOptions]="{standalone: true} " required> -->
 
+                <input type="range" class="form-range" id="customRange1" min="1000" max="10000"
+                    [(ngModel)]="ec2form.Storage" [ngModelOptions]="{standalone: true} " required>
             </div>
             <div class="row">
                 <label for="">Firewall</label>
@@ -48,8 +60,8 @@
             <br>
             <div class="">
                 <a routerLink="" (click)="go('s3')">
-                    <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!ec2Form.valid" (click)="add()"
-                    >Next</button>
+                    <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!ec2Form.valid"
+                        (click)="add()">Next</button>
                 </a>
             </div>
 

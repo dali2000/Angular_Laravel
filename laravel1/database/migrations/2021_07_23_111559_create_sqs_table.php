@@ -15,12 +15,14 @@ class CreateSqsTable extends Migration
     {
         Schema::create('sqs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('idServer');
             $table->string('Quere_Name');
             $table->enum('Region',['r1','r2','r3']);
+            $table->foreign('idServer')->references('id')->on('servers')->onDelete("cascade");;
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

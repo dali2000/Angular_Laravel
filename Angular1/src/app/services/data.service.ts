@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,28 @@ addSqs(data){
   return this.httpClient.post('http://127.0.0.1:8000/addSqs',data);
 }
 
+addServer(data){
+  return this.httpClient.post('http://127.0.0.1:8000/addServer',data);
+}
+
+getServers(){
+  return this.httpClient.get('http://127.0.0.1:8000/getServers');
+}
+getServerById(id){
+  return this.httpClient.get('http://127.0.0.1:8000/getServerById/'+id);
+}
+deleteServerData(id){
+  return this.httpClient.delete('http://127.0.0.1:8000/DeleteServer/'+id);
+}
+
+
+private idSaurce = new BehaviorSubject<number>(1);
+currentId = this.idSaurce.asObservable();
+
+
+changeId(id:number)
+{
+  this.idSaurce.next(id);
+}
 
 }

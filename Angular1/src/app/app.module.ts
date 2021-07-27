@@ -15,6 +15,9 @@ import { AddServerComponent } from './components/add-server/add-server.component
 import { Ec2Component } from './components/ec2/ec2.component';
 import { S3Component } from './components/s3/s3.component';
 import { SComponent } from './components/s/s.component';
+import { ServComponent } from './components/serv/serv.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 ;
@@ -24,8 +27,10 @@ const appRoutes:Routes = [
 
   { path: 'User', component:UserComponent },
   { path: 'Inscri', component:InscriComponent},
-
   { path: 'EditUser/:id', component:UserEditComponent},
+  { path: 'login', component:LoginComponent},
+  { path: 'servers',
+   component:ServComponent,},
   { path: 'addServer' ,
    component:AddServerComponent,
    children: [
@@ -51,6 +56,14 @@ const appRoutes:Routes = [
     S3Component,
    
     SComponent,
+   
+    ServComponent,
+   
+    SidebarComponent,
+   
+    LoginComponent,
+   
+
 
     
   ],
