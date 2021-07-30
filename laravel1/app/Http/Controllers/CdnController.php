@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\cdn;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CdnController extends Controller
 {
@@ -29,5 +30,14 @@ class CdnController extends Controller
         }
         $s3->update($request->all());
         return response($s3,200);
+    }
+    public function getCdn3ByIdServer($id)
+    {
+        $cdn = DB::table('cdns')->where('idServer',$id)->get();
+        if(is_null($cdn))
+        {
+            return response()->json(['message' => 'server not found'], 404);
+        }
+            return response()->json($cdn, 200);
     }
 }

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Ec3;
 use App\Server;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use SebastianBergmann\Environment\Console;
 
 class ServerController extends Controller
 {
@@ -33,4 +36,34 @@ class ServerController extends Controller
         $server->delete();
         return response()->json(null, 204);
     }
+
+    public function getServerEc2($id){
+
+        $ec2 = DB::table('servers')
+            ->join('ec3s', $id , '=', 'ec3s.idServer')
+            ->select('ec3s.*')
+            ->get();
+          
+        if(is_null($ec2))
+        {
+            return response()->json(['message' => 'server not found'], 404);
+        }
+            return response()->json(Ec3::find($ec2.$id), 200);
+    }
+    
+
+    public function getServerCdn($id){
+
+        $cdn = DB::table('servers')
+            ->join('cdns', $id, '=', 'cdns.idServer')
+            ->select('cdns.*')
+            ->get();
+        if(is_null($cdn))
+        {
+            return response()->json(['message' => 'server not found'], 404);
+        }
+            return response()->json(Ec3::find($cdn.$id), 200);
+    }
+    
+
 }

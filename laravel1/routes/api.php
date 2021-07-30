@@ -49,16 +49,23 @@ Route::get('/', 'UserController@index');
 Route::get('getEc3', 'Ec3Controller@getEc3');
 Route::get('getEc3ById/{id}', 'Ec3Controller@getEc3ById');
 Route::post('addEc3', 'Ec3Controller@addEc3');
-Route::put('updateEc3/{id}', 'Ec3Controller@updateEc3');
-
+Route::post('updateEc3/{id}', 'Ec3Controller@updateEc3');
+Route::get('getEc3ByIdServer/{id}', 'Ec3Controller@getEc3ByIdServer');
 
 //S3
 Route::post('addCdn', 'CdnController@addS3');
 Route::get('getS3', 'CdnController@getS3');
 Route::get('getS3ById/{id}', 'CdnController@getS3ById');
-Route::put('updateS3/{id}', 'CdnController@updateS3');
+Route::post('updateS3/{id}', 'CdnController@updateS3');
+Route::get('getS3ByIdServer/{id}', 'CdnController@getCdn3ByIdServer');
+
 //sqs
 Route::post('addSqs', 'SqsController@addSqs');
+Route::get('getSqs', 'SqsController@getSqs');
+Route::get('getSqsById/{id}', 'SqsController@getSqsById');
+Route::post('updateSqs/{id}', 'SqsController@updateSqs');
+Route::get('getSqsByIdServer/{id}', 'SqsController@getSqsByIdServer');
+
 
 
 //server
@@ -66,3 +73,6 @@ Route::post('addServer', 'ServerController@addServer');
 Route::get('getServerById/{id}', 'ServerController@getServerById');
 Route::get('getServers', 'ServerController@getServers');
 Route::delete('DeleteServer/{id}', 'ServerController@DeleteServer');
+
+Route::get('getServerEc2', 'ServerController@getServerEc2/{id}');
+Route::get('getServerCdn', 'ServerController@getServerCdn/{id}');
