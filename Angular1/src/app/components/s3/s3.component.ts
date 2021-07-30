@@ -34,7 +34,7 @@ export class S3Component implements OnInit {
 
     this.dataService.addCdn(this.s3).subscribe(res => {
       console.log(res);
-      console.log(this.s3)
+      
     });
   }
 }

@@ -18,6 +18,8 @@ import { SComponent } from './components/s/s.component';
 import { ServComponent } from './components/serv/serv.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
+import { Ec2EditComponent } from './components/ec2-edit/ec2-edit.component';
+import { S3EditComponent } from './components/s3-edit/s3-edit.component';
 
 
 ;
@@ -36,7 +38,9 @@ const appRoutes:Routes = [
    children: [
      {path: 'ec2', component: Ec2Component},
      {path: 's3', component: S3Component},
-     {path: 'sqs', component:SComponent}
+     {path: 'sqs', component:SComponent},
+     {path: 'ec2-edit/:id', component:Ec2EditComponent},
+     {path: 's3-edit/:id', component:S3EditComponent}
    ]
   },
 
@@ -62,6 +66,10 @@ const appRoutes:Routes = [
     SidebarComponent,
    
     LoginComponent,
+   
+    Ec2EditComponent,
+   
+    S3EditComponent,
    
 
 

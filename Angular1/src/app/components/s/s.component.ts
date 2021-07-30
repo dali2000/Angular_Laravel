@@ -29,6 +29,6 @@ export class SComponent implements OnInit {
     this.dataService.addSqs(s).subscribe(res => {
       console.log(res);
     });
-    console.log(s);
+    
   }
 }

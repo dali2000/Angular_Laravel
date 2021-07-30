@@ -52,6 +52,12 @@ export class ServComponent implements OnInit {
     console.log(this.server1.id);
   }
 
+  getEc3ByIdServer(id){
+    this.dataService.getEc3ByIdServer(id).subscribe(res =>{
+      console.log(res);
+    });
+  }
+
 }
 
 

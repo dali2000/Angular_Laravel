@@ -51,10 +51,28 @@ getServerById(id){
 deleteServerData(id){
   return this.httpClient.delete('http://127.0.0.1:8000/DeleteServer/'+id);
 }
+getEc3ByIdServer(id){
+  return this.httpClient.get('http://127.0.0.1:8000/getEc3ByIdServer/'+id)
+}
+updateEc3(id, data){
+  return this.httpClient.post('http://127.0.0.1:8000/updateEc3/'+id,data);
+}
+
+getS3ByIdServer(id){
+  return this.httpClient.get('http://127.0.0.1:8000/getS3ByIdServer/'+id);
+}
+getS3ById(id){
+  return this.httpClient.get('127.0.0.1:8000/getS3ById/'+id);
+}
+updateS3(){
+  // return this.httpClient.post('127.0.0.1:8000/updataSqs')
+}
+
 
 
 private idSaurce = new BehaviorSubject<number>(1);
 currentId = this.idSaurce.asObservable();
+
 
 
 changeId(id:number)
