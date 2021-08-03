@@ -4,11 +4,7 @@
     <div class="card-header">Ec2</div>
     <div class="card-body">
         <form #ec2Form="ngForm" class="form-group">
-            <div class="col">
-                <label for="">idServer</label>
-                <input type="text" class="form-control" placeholder="idServer" name="idServer"
-                    [(ngModel)]="ec2form.idServer" [ngModelOptions]="{standalone: true}" required >
-            </div>
+  
             <div class="row">
                 <div class="col">
                     <label for="">Server Name</label>
@@ -55,7 +51,7 @@
             </div>
             <br>
             <div class="">
-                <a routerLink="" (click)="go()">
+                <a routerLink="/preview/{{id2}}" (click)="go()">
                     <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!ec2Form.valid"
                         (click)="update()">Next</button>
                 </a>

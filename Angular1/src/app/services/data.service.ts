@@ -15,7 +15,7 @@ getDataUser(){
   return this.httpClient.get('http://127.0.0.1:8000/users');
 }
 submit(data){
-  return this.httpClient.post('http://127.0.0.1:8000/addUser',data);
+  return this.httpClient.post('http://127.0.0.1:8000/postRegister',data);
 }
 deleteUserData(id){
   return this.httpClient.delete('http://127.0.0.1:8000/deleteUser/'+id);
@@ -25,6 +25,9 @@ getUserById(id){
 }
 updateUser(id, data){
   return this.httpClient.post('http://127.0.0.1:8000/updateUser/'+id,data);
+}
+login(data){
+  return this.httpClient.post('http://127.0.0.1:8000/login/',data)
 }
 
 //s3
@@ -61,11 +64,23 @@ updateEc3(id, data){
 getS3ByIdServer(id){
   return this.httpClient.get('http://127.0.0.1:8000/getS3ByIdServer/'+id);
 }
-getS3ById(id){
-  return this.httpClient.get('127.0.0.1:8000/getS3ById/'+id);
+getSqsByIdServer(id){
+  return this.httpClient.get('http://127.0.0.1:8000/getSqsByIdServer/'+id);
 }
-updateS3(){
-  // return this.httpClient.post('127.0.0.1:8000/updataSqs')
+getS3ById(id){
+  return this.httpClient.get('http://127.0.0.1:8000/getS3ById/'+id);
+}
+getEc3ById(id){
+  return this.httpClient.get('http://127.0.0.1:8000/getEc3ById/'+id);
+}
+getSqsById(id){
+  return this.httpClient.get('http://127.0.0.1:8000/getSqsById/'+id);
+}
+updateS3(id,data){
+  return this.httpClient.post('http://127.0.0.1:8000/updateS3/'+id,data);
+}
+updateSqs(id,data){
+  return this.httpClient.post('http://127.0.0.1:8000/updateSqs/'+id,data)
 }
 
 

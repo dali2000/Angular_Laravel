@@ -12,19 +12,27 @@ export class InscriComponent implements OnInit {
 
   constructor(private dataService:DataService) { }
   public form = {
-    first_name:null,
-    last_name:null,
     email:null,
-    password:null
-  }
+    password:null,
+    first_name:null,
+    last_name:null
 
+  }
+  public error = null;
+  public success = null;
   ngOnInit(): void {
   }
+  
   add(){
     this.dataService.submit(this.form).subscribe(res =>{
       console.log(res);
-    })
+
+      
+    });
+    console.log(this.form);
   }
- 
+  handleError(error){
+    this.error = error.error.error;
+  }
 
 }

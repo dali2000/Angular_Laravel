@@ -1,38 +1,49 @@
 <div class="box">
     <div class="container">
-        <form #signForm="ngForm" (ngSubmit)="add()">
-            <div class="row form-group">
-                <div class="col-sm">
-                    <label for="">first Name</label>
-                    <input type="text" placeholder="first Name" [(ngModel)]="form.first_name" name="first_name"
-                        required>
-                </div>
-
+        <div class="alert alert-danger" [hidden]="!error">
+            {{error}}
+        </div>
+        <div class="alert alert-success" [hidden]="!success">
+            {{success}}
+        </div>
+        <div class="card">
+            <div class="card-header">SignIn</div>
+            <div class="card-body">
+                <form #signForm="ngForm" (ngSubmit)="add()">
+                    <div class="row form-group">
+                        <div class="col-sm">
+                            <label for="">first Name</label>
+                            <input type="text" placeholder="first Name" [(ngModel)]="form.first_name" name="first_name"
+                                required>
+                        </div>
+        
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm">
+                            <label for="">Last Name</label>
+                            <input type="text" placeholder="Last Name" [(ngModel)]="form.last_name" name="last_name" required>
+                        </div>
+        
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm">
+                            <label for="">Email</label>
+                            <input type="text" placeholder="Email" [(ngModel)]="form.email" name="email" required>
+                        </div>
+        
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md">
+                            <label for="password">password</label>
+                            <input type="password" placeholder="password" [(ngModel)]="form.password" name="password" id="password" required>
+                        </div>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary" id="btnsign" [disabled]="!signForm.valid">SignUp</button>
+                    </div>
+        
+                </form>
             </div>
-            <div class="row form-group">
-                <div class="col-sm">
-                    <label for="">Last Name</label>
-                    <input type="text" placeholder="Last Name" [(ngModel)]="form.last_name" name="last_name" required>
-                </div>
-
-            </div>
-            <div class="row form-group">
-                <div class="col-sm">
-                    <label for="">Email</label>
-                    <input type="text" placeholder="Email" [(ngModel)]="form.email" name="email" required>
-                </div>
-
-            </div>
-            <div class="row form-group">
-                <div class="col-md">
-                    <label for="password">password</label>
-                    <input type="password" placeholder="password" [(ngModel)]="form.password" name="password" id="password" required>
-                </div>
-            </div>
-            <div class="">
-                <button type="submit" class="btn btn-primary" id="btnsign" [disabled]="!signForm.valid">SignUp</button>
-            </div>
-
-        </form>
+        </div>
     </div>
 </div>

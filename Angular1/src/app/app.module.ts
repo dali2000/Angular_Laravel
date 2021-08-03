@@ -20,6 +20,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
 import { Ec2EditComponent } from './components/ec2-edit/ec2-edit.component';
 import { S3EditComponent } from './components/s3-edit/s3-edit.component';
+import { PreviewServerComponent } from './components/preview-server/preview-server.component';
+import { SEditComponent } from './components/s-edit/s-edit.component';
 
 
 ;
@@ -31,6 +33,7 @@ const appRoutes:Routes = [
   { path: 'Inscri', component:InscriComponent},
   { path: 'EditUser/:id', component:UserEditComponent},
   { path: 'login', component:LoginComponent},
+  { path: 'preview/:id', component:PreviewServerComponent},
   { path: 'servers',
    component:ServComponent,},
   { path: 'addServer' ,
@@ -40,7 +43,8 @@ const appRoutes:Routes = [
      {path: 's3', component: S3Component},
      {path: 'sqs', component:SComponent},
      {path: 'ec2-edit/:id', component:Ec2EditComponent},
-     {path: 's3-edit/:id', component:S3EditComponent}
+     {path: 's3-edit/:id', component:S3EditComponent},
+     {path: 's-edit/:id', component:SEditComponent}
    ]
   },
 
@@ -70,6 +74,10 @@ const appRoutes:Routes = [
     Ec2EditComponent,
    
     S3EditComponent,
+   
+    PreviewServerComponent,
+   
+    SEditComponent,
    
 
 

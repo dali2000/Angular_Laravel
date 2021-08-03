@@ -1,12 +1,12 @@
 <div class="card">
     <div class="card-header">S3/CDN</div>
     <div class="card-body">
-        {{id}}
+        <!-- {{id}} -->
         <form #s3form="ngForm" class="form-group">
             <div class="col">
-                <label for="">idServer</label>
+                
                 <input type="text" class="form-control" placeholder="idServer" name="idServer"
-                    [(ngModel)]="s3.idServer" [ngModelOptions]="{standalone: true}" required disabled>
+                    [(ngModel)]="s3.idServer" [ngModelOptions]="{standalone: true}" required disabled hidden>
             </div>
             <div class="row">
                 <div class="col">

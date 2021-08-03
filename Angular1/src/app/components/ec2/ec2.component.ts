@@ -19,7 +19,7 @@ export class Ec2Component implements OnInit {
   }
 
   public ec2form = {
-    id:null,
+    
     idServer:null ,
     ServerName: null,
     Type: null,

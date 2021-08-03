@@ -3,11 +3,11 @@
     <div class="card-body">
         
         <form #s3form="ngForm" class="form-group">
-            <div class="col">
+            <!-- <div class="col">
                 <label for="">idServer</label>
                 <input type="text" class="form-control" placeholder="idServer" name="idServer"
                     [(ngModel)]="s3.idServer" [ngModelOptions]="{standalone: true}" required disabled>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col">
                     <label for="">Public Bucket</label>
@@ -49,8 +49,8 @@
 
 
                 <div class="col-4">
-                    <a routerLink="" (click)="go('sqs')">
-                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3form.valid" (click)="updateCdn()"
+                    <a routerLink="/preview/{{id2}}" >
+                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3form.valid" (click)="updateCdn(s3)"
                         >Next</button>
                     </a>
                 </div>

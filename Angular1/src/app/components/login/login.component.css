@@ -1,0 +1,21 @@
+ input,textarea {
+    padding: 0px 8px 4px 8px;
+ 
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 16px;
+    letter-spacing: 1px;
+    outline-style: none;
+}
+.ng-invalid:not(form){
+    border-left:5px solid red;
+}
+.ng-valid:not(form){
+    border-left:5px solid green;
+}

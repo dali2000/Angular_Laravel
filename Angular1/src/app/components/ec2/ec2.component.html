@@ -9,9 +9,9 @@
     <div class="card-body">
         <form #ec2Form="ngForm" class="form-group">
             <div class="col">
-                <label for="">idServer</label>
+                <!-- <label for="">idServer</label> -->
                 <input type="text" class="form-control" placeholder="idServer" name="idServer"
-                    [(ngModel)]="ec2form.idServer" [ngModelOptions]="{standalone: true}" required disabled>
+                    [(ngModel)]="ec2form.idServer" [ngModelOptions]="{standalone: true}" required disabled hidden>
             </div>
             <div class="row">
                 <div class="col">

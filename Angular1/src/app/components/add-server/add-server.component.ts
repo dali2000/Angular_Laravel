@@ -12,7 +12,7 @@ export class AddServerComponent implements OnInit {
     id: 1,
     name: 'server'
   };
-  id = "9"
+  
   constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
