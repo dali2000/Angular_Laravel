@@ -36,7 +36,9 @@ class Ec3Controller extends Controller
     }
     public function getEc3ByIdServer($id)
     {
+        
         $ec = DB::table('ec3s')->where('idServer',$id)->get();
+        
         if(is_null($ec))
         {
             return response()->json(['message' => 'server not found'], 404);

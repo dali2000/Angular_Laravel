@@ -76,3 +76,8 @@ Route::delete('DeleteServer/{id}', 'ServerController@DeleteServer');
 
 Route::get('getServerEc2', 'ServerController@getServerEc2/{id}');
 Route::get('getServerCdn', 'ServerController@getServerCdn/{id}');
+
+
+//auth
+Route::post('postRegister','RegisterController@postRegister');
+Route::post('login', 'LoginController@login');
