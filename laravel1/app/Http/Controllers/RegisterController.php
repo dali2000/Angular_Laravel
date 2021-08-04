@@ -11,10 +11,11 @@ class RegisterController extends Controller
     {
         $user1 = $request->all();
         $user = Sentinel::registerAndActivate($user1);
-        if(is_null($user)){
-            return response()->json(['message' => 'User exist'], 400);
-        }
         
+        $response['message'] = 'user Added';
+        $response['code'] = 200;
+        $response['user'] = $user1;
+        return response()->json($response);
 
     }
 }

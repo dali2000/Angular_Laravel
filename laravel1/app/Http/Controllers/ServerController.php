@@ -17,7 +17,10 @@ class ServerController extends Controller
     public function addServer(Request $request)
     {
         $server = Server::create($request->all());
-        return response($server, 201);
+        $response['message'] = 'server Added';
+        $response['code'] = 200;
+        $response['server'] = $server;
+        return response()->json($response);
     }
     public function getServerById($id)
     {
