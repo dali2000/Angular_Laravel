@@ -1,0 +1,10 @@
+body{
+    margin-left:15px;
+}
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 240px);
+    left: 220px;
+    margin-top:863px;
+}

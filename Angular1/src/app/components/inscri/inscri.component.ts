@@ -18,21 +18,22 @@ export class InscriComponent implements OnInit {
     last_name:null
 
   }
-  public error = null;
-  public success = null;
+  public message =""
+  public data: any;
   ngOnInit(): void {
   }
   
   add(){
     this.dataService.submit(this.form).subscribe(res =>{
       console.log(res);
+      this.data = res;
+      this.message = this.data.message;
 
-      
+      console.log(this.data);
     });
-    console.log(this.form);
+
+    
   }
-  handleError(error){
-    this.error = error.error.error;
-  }
+
 
 }

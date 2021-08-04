@@ -1,11 +1,15 @@
+<div class="alert alert-info" [hidden]=!message>
+    {{message}}
+</div>
 <form #Form="ngForm" (ngSubmit)="add1()">
     <input type="text" class="form-control" placeholder="Server Name" name="name" [(ngModel)]="server.name"
         [ngModelOptions]="{standalone: true}" required>
     <input type="submit" class="btn btn-success" value="Add Server">
 </form>
 <br>
+
 <div class="card">
-    <div class="card-header">Ec2</div>
+    <div class="card-header" style="background-color: rgb(237, 241, 251);">Ec2</div>
     <div class="card-body">
         <form #ec2Form="ngForm" class="form-group">
             <div class="col">
@@ -58,12 +62,12 @@
                 </select>
             </div>
             <br>
-            <div class="">
-                <a routerLink="" (click)="go('s3')">
-                    <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!ec2Form.valid"
-                        (click)="add()">Next</button>
+            
+                <a routerLink="" (click)="go('s3')" >
+                    <button type="button" class="btn btn-primary" id="btnsign" 
+                        (click)="add()" [disabled]="!ec2Form.valid">Next</button>
                 </a>
-            </div>
+          
 
         </form>
     </div>

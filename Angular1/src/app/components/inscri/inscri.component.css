@@ -14,9 +14,9 @@
     outline-style: none;
 }
 .ng-invalid:not(form){
-    border-bottom:2px solid red;
+    border-bottom:2px solid rgb(237, 241, 251);
 }
 .ng-valid:not(form){
-    border-bottom:2px solid green;
+    border-bottom:2px solid rgb(135, 161, 255);
 }
 

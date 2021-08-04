@@ -20,6 +20,7 @@ export class S3EditComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.getS3();
     
+    
   }
 
   go(cmp) {

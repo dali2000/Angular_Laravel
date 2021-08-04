@@ -1,182 +1,185 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
-
-:root {
-    --header-height: 3rem;
-    --nav-width: 68px;
-    --first-color: #4723D9;
-    --first-color-light: #AFA5D9;
-    --white-color: #F7F6FB;
-    --body-font: 'Nunito', sans-serif;
-    --normal-font-size: 1rem;
-    --z-fixed: 100
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background-color: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+  
+}
+.sidebar.active{
+  width:240px;
+}
+.sidebar.active .log_content .logo{
+  opacity:1;
+  pointer-events: none;
+}
+.sidebar .log_content .logo {
+  color: #fff;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity:0;
+  pointer-events: none;
+  transition: all 0.5s ease;
 }
 
-*,
-::before,
-::after {
-    box-sizing: border-box
+.log_content .logo i {
+  font-size: 28px;
+  margin-right: 5px;
 }
-
-body {
-    position: relative;
-    margin: var(--header-height) 0 0 0;
-    padding: 0 1rem;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    transition: .5s
+.log_content .logo .logo_name {
+  font-size: 20px;
+  font-weight: 400px;
 }
-
-a {
-    text-decoration: none
+.sidebar #btn {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 6px;
+  font-size: 28px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);text-align: center;
 }
+.sidebar.active #btn {
+  left: 90%;
+}
+.sidebar ul {
+  margin-top: 20px;
+}
+.sidebar ul li {
+  position: relative;
+  list-style: none;
+  height: 50px;
+  width: 100%;
+  margin: 0 5px;
+  line-height: 50px;
+  border-radius: 12px;
+}
+.sidebar ul li .tool{
+position: absolute;
+left:122px;
+top:0;
+border-radius: 6px;
+transform: translate(-50% , -50%);
+height: 35px;
+width: 122px;
+background: #fff;
+line-height:35px;
+box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+transition:0s;
+text-align: center;
+opacity: 0;
+pointer-events: none;
+display: block;
 
-.header {
-    width: 100%;
-    height: var(--header-height);
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+.sidebar ul li:hover .tool{
+  top: 50%;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+.sidebar.active ul li:hover .tool{
+  display: none;
+}
+.sidebar ul li a{
+    color: #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    background-color: var(--white-color);
-    z-index: var(--z-fixed);
-    transition: .5s
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
 }
-
-.header_toggle {
-    color: var(--first-color);
-    font-size: 1.5rem;
-    cursor: pointer
+.sidebar ul li a:hover{
+    background-color: #fff;
+    color:#11101d ;
+    border-radius: 12px;
 }
-
-.header_img {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    overflow: hidden
+.sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
 }
-
-.header_img img {
-    width: 40px
+.sidebar .links_name{
+  opacity:0;
+  pointer-events: none;
 }
-
-.l-navbar {
-    position: fixed;
-    top: 0;
-    left: -30%;
-    width: var(--nav-width);
-    height: 100vh;
-    background-color: var(--first-color);
-    padding: .5rem 1rem 0 0;
-    transition: .5s;
-    z-index: var(--z-fixed)
+.sidebar.active .links_name{
+  opacity:1;
+  pointer-events: auto;
 }
-
-.nav {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden
-}
-
-.nav_logo,
-.nav_link {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    align-items: center;
-    column-gap: 1rem;
-    padding: .5rem 0 .5rem 1.5rem
-}
-
-.nav_logo {
-    margin-bottom: 2rem
-}
-
-.nav_logo-icon {
-    font-size: 1.25rem;
-    color: var(--white-color)
-}
-
-.nav_logo-name {
-    color: var(--white-color);
-    font-weight: 700
-}
-
-.nav_link {
-    position: relative;
-    color: var(--first-color-light);
-    margin-bottom: 1.5rem;
-    transition: .3s
-}
-
-.nav_link:hover {
-    color: var(--white-color)
-}
-
-.nav_icon {
-    font-size: 1.25rem
-}
-
-.show {
-    left: 0
-}
-
-.body-pd {
-    padding-left: calc(var(--nav-width) + 1rem)
-}
-
-.active {
-    color: var(--white-color)
-}
-
-.active::before {
-    content: '';
+.sidebar .profile_content{
     position: absolute;
+    color:#fff;
+    bottom: 0;
     left: 0;
-    width: 2px;
-    height: 32px;
-    background-color: var(--white-color)
+    width: 100%;
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background-color: #1d1b31;
+}
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile_details{
+  opacity: 1;
+  pointer-events: auto;
+}
+.profile .profile_details img{
+    height:45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.profile .profile_details .name_job{
+     margin-left: 10px;
+}
+.profile .profile_details .name{
+    font-size:15px;
+    font-weight: 400;
+}
+.profile .profile_details .job{
+    font-size:12px;
+   
+}
+.sidebar.active .profile #log_out{
+  left: 88%;
+}
+.profile #log_out{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width:50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
 }
 
-.height-100 {
-    height: 100vh
-}
-
-@media screen and (min-width: 768px) {
-    body {
-        margin: calc(var(--header-height) + 1rem) 0 0 0;
-        padding-left: calc(var(--nav-width) + 2rem)
-    }
-
-    .header {
-        height: calc(var(--header-height) + 1rem);
-        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
-    }
-
-    .header_img {
-        width: 40px;
-        height: 40px
-    }
-
-    .header_img img {
-        width: 45px
-    }
-
-    .l-navbar {
-        left: 0;
-        padding: 1rem 1rem 0 0
-    }
-
-    .show {
-        width: calc(var(--nav-width) + 156px)
-    }
-
-    .body-pd {
-        padding-left: calc(var(--nav-width) + 188px)
-    }
+.sidebar.active .home_content .container{
+  margin:50px;
 }

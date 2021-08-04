@@ -22,11 +22,11 @@ export class PreviewServerComponent implements OnInit {
     
     this.id = this.route.snapshot.params.id;
     
-    this.getServerById();
+    
     this.getEc3ByIdServer();
     this.getS3ByIdServer();
     this.getSqsByIdServer();
-   
+    this.getServerById();
   }
 
   getServerById(){

@@ -21,22 +21,25 @@ export class Ec2Component implements OnInit {
   public ec2form = {
     
     idServer:null ,
-    ServerName: null,
+    ServerName:"",
     Type: null,
     Storage: 0,
     Firwall: null,
     Machine: null
   };
-
+  public message =""
   public data : any;
   add1() {
 
     this.dataService.addServer(this.server).subscribe(res => {
       this.data = res;
-      console.log(res);
-      this.ec2form.idServer = this.data.id;
+      console.log(this.data.server.id);
+      this.ec2form.idServer = this.data.server.id;
+      this.message = this.data.message;
     });
-    console.log(this.ec2form.idServer);
+    if(this.server.name==null){
+      this.message ='plz add a server name'
+    }
   }
   
 
