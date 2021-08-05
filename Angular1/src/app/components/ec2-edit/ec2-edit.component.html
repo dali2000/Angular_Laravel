@@ -1,17 +1,14 @@
-
-<br>
-<div class="card">
-    <div class="card-header">Ec2</div>
-    <div class="card-body">
+<div [ngClass]="{'home':true}">
+    <br>
+    <div class="box">
         <form #ec2Form="ngForm" class="form-group">
-  
             <div class="row">
-                <div class="col">
+                <div class="col-md-4">
                     <label for="">Server Name</label>
                     <input type="text" class="form-control" placeholder="Server Name" name="ServerName"
                         [(ngModel)]="ec2form.ServerName" [ngModelOptions]="{standalone: true}" required>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <label for="">Type</label>
                     <select name="type" id="" class="form-control" [(ngModel)]="ec2form.Type"
                         [ngModelOptions]="{standalone: true}" required>
@@ -20,34 +17,37 @@
                         <option value="type3">Type3</option>
                     </select>
                 </div>
+                <div class="col-md-4">
+                    <label for="customRange1" class="form-label">Storage:</label>
+                    <span>{{ec2form.Storage}}Go</span>
+                    <!-- <input type="range" class="form-control" min="1000" max="10000" [(ngModel)]="ec2form.Storage"
+                        [ngModelOptions]="{standalone: true} " required> -->
+    
+                    <input type="range" class="form-range" id="customRange1" min="1000" max="10000"
+                        [(ngModel)]="ec2form.Storage" [ngModelOptions]="{standalone: true} " class="form-control"> 
+                </div>
             </div>
+            <br><br>
             <div class="row">
-                <label for="customRange1" class="form-label">Storage:</label>
-                <span>{{ec2form.Storage}}</span>
-                <!-- <input type="range" class="form-control" min="1000" max="10000" [(ngModel)]="ec2form.Storage"
-                    [ngModelOptions]="{standalone: true} " required> -->
+                <div class="col-md-6">
+                    <label for="">Firewall</label>
+                    <select name="firewall" id="" class="form-control" [(ngModel)]="ec2form.Firwall"
+                        [ngModelOptions]="{standalone: true}" required>
+                        <option value="f1">FireWall1</option>
+                        <option value="f2">FireWall2</option>
+                        <option value="f3">FireWall3</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="">Machine</label>
+                    <select name="Machine" id="" class="form-control" [(ngModel)]="ec2form.Machine"
+                        [ngModelOptions]="{standalone: true}" required>
+                        <option value="M1">Machine1</option>
+                        <option value="M2">Machine2</option>
+                        <option value="M3">Machine3</option>
+                    </select>
+                </div>
 
-                <input type="range" class="form-range" id="customRange1" min="1000" max="10000"
-                    [(ngModel)]="ec2form.Storage" [ngModelOptions]="{standalone: true} ">
-            </div>
-            <div class="row">
-                <label for="">Firewall</label>
-                <select name="firewall" id="" class="form-control" [(ngModel)]="ec2form.Firwall"
-                    [ngModelOptions]="{standalone: true}">
-                    <option value="f1">FireWall1</option>
-                    <option value="f2">FireWall2</option>
-                    <option value="f3">FireWall3</option>
-                </select>
-            </div>
-            <br>
-            <div class="row">
-                <label for="">Machine</label>
-                <select name="machine" id="" class="form-control" [(ngModel)]="ec2form.Machine"
-                    [ngModelOptions]="{standalone: true}" >
-                    <option value="M1">Machine1</option>
-                    <option value="M2">Machine2</option>
-                    <option value="M3">Machine3</option>
-                </select>
             </div>
             <br>
             <div class="">
@@ -59,4 +59,5 @@
 
         </form>
     </div>
+
 </div>

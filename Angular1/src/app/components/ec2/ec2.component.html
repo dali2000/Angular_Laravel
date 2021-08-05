@@ -1,16 +1,30 @@
-<div class="alert alert-info" [hidden]=!message>
-    {{message}}
-</div>
-<form #Form="ngForm" (ngSubmit)="add1()">
-    <input type="text" class="form-control" placeholder="Server Name" name="name" [(ngModel)]="server.name"
-        [ngModelOptions]="{standalone: true}" required>
-    <input type="submit" class="btn btn-success" value="Add Server">
-</form>
-<br>
+<div [ngClass]="{'home':true}">
+    <div class="box">
+        <div class="row">
+            <form #Form="ngForm" (ngSubmit)="add1()">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="Server Name" name="name"
+                            [(ngModel)]="server.name" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="submit" class="btn btn-warning" value="Add Server" id="btn2">
 
-<div class="card">
-    <div class="card-header" style="background-color: rgb(237, 241, 251);">Ec2</div>
-    <div class="card-body">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-info" [hidden]=!message>
+                            {{message}}
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <br>
+    <div class="box">
         <form #ec2Form="ngForm" class="form-group">
             <div class="col">
                 <!-- <label for="">idServer</label> -->
@@ -18,12 +32,12 @@
                     [(ngModel)]="ec2form.idServer" [ngModelOptions]="{standalone: true}" required disabled hidden>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-md-4">
                     <label for="">Server Name</label>
                     <input type="text" class="form-control" placeholder="Server Name" name="ServerName"
                         [(ngModel)]="ec2form.ServerName" [ngModelOptions]="{standalone: true}" required>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <label for="">Type</label>
                     <select name="type" id="" class="form-control" [(ngModel)]="ec2form.Type"
                         [ngModelOptions]="{standalone: true}" required>
@@ -32,43 +46,47 @@
                         <option value="type3">Type3</option>
                     </select>
                 </div>
-            </div>
-            <div class="row">
-                <label for="customRange1" class="form-label">Storage:</label>
-                <span>{{ec2form.Storage}}</span>
-                <!-- <input type="range" class="form-control" min="1000" max="10000" [(ngModel)]="ec2form.Storage"
-                    [ngModelOptions]="{standalone: true} " required> -->
+                <div class="col-md-4">
+                    <label for="customRange1" class="form-label">Storage:</label>
+                    <span>{{ec2form.Storage}}Go</span>
+                    <!-- <input type="range" class="form-control" min="1000" max="10000" [(ngModel)]="ec2form.Storage"
+                            [ngModelOptions]="{standalone: true} " required> -->
 
-                <input type="range" class="form-range" id="customRange1" min="1000" max="10000"
-                    [(ngModel)]="ec2form.Storage" [ngModelOptions]="{standalone: true} " required>
-            </div>
-            <div class="row">
-                <label for="">Firewall</label>
-                <select name="firewall" id="" class="form-control" [(ngModel)]="ec2form.Firwall"
-                    [ngModelOptions]="{standalone: true}" required>
-                    <option value="f1">FireWall1</option>
-                    <option value="f2">FireWall2</option>
-                    <option value="f3">FireWall3</option>
-                </select>
+                    <input type="range" class="form-range form-control" id="customRange1" min="1000" max="10000"
+                        [(ngModel)]="ec2form.Storage" [ngModelOptions]="{standalone: true} " required>
+                </div>
             </div>
             <br>
             <div class="row">
-                <label for="">Machine</label>
-                <select name="machine" id="" class="form-control" [(ngModel)]="ec2form.Machine"
-                    [ngModelOptions]="{standalone: true}" required>
-                    <option value="M1">Machine1</option>
-                    <option value="M2">Machine2</option>
-                    <option value="M3">Machine3</option>
-                </select>
+                <div class="col-md-6">
+                    <label for="">Firewall</label>
+                    <select name="firewall" id="" class="form-control" [(ngModel)]="ec2form.Firwall"
+                        [ngModelOptions]="{standalone: true}" required>
+                        <option value="f1">FireWall1</option>
+                        <option value="f2">FireWall2</option>
+                        <option value="f3">FireWall3</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="">Machine</label>
+                    <select name="machine" id="" class="form-control" [(ngModel)]="ec2form.Machine"
+                        [ngModelOptions]="{standalone: true}" required>
+                        <option value="M1">Machine1</option>
+                        <option value="M2">Machine2</option>
+                        <option value="M3">Machine3</option>
+                    </select>
+                </div>
+
             </div>
             <br>
-            
-                <a routerLink="" (click)="go('s3')" >
-                    <button type="button" class="btn btn-primary" id="btnsign" 
-                        (click)="add()" [disabled]="!ec2Form.valid">Next</button>
-                </a>
-          
-
+            <div class="row">
+                <div class="col-sm-6">
+                    <a routerLink="" (click)="go('s3')">
+                        <button type="button" class="btn btn-primary" id="btn1" (click)="add()"
+                            [disabled]="!ec2Form.valid">Next</button>
+                    </a>
+                </div>
+            </div>
         </form>
     </div>
 </div>

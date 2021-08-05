@@ -1,15 +1,36 @@
-input[type='text'],textarea {
-    padding: 0px 8px 4px 8px;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    border-radius: 0px;
-    margin-bottom: 25px;
-    margin-top: 2px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: montserrat;
-    color: #2C3E50;
-    font-size: 16px;
-    letter-spacing: 1px;
-    outline-style: none;
+
+#btn1 {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+#btn1:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+.box{
+  margin-top:50px;
+  border:none;
+  padding:25px;
+  border-radius:12px;
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+}
+.box2{
+   padding:25px;
+}
+@media only screen and (max-width: 360px) {
+.box{
+  width:240px;
+  margin-top:10px;
+  
+}
+#btn1 {
+margin-top: 10px;
+}
+#btn2{
+  margin-top: 10px;
+  color:white;
+}
 }

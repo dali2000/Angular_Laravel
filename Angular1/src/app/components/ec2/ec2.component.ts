@@ -23,7 +23,7 @@ export class Ec2Component implements OnInit {
     idServer:null ,
     ServerName:"",
     Type: null,
-    Storage: 0,
+    Storage: 1000,
     Firwall: null,
     Machine: null
   };
@@ -42,10 +42,6 @@ export class Ec2Component implements OnInit {
     }
   }
   
-
-
- 
-
   go(cmp) {
     this.router.navigate(['addServer/' + cmp])
   }
@@ -71,5 +67,14 @@ export class Ec2Component implements OnInit {
   newId(){
     this.dataService.changeId(this.ec2form.idServer);
   }
-
+  public check =true
+  public toggle(){
+    if(this.check==true){
+      this.check=false
+    }
+    else{
+      this.check=true
+    }
+    
+  }
 }

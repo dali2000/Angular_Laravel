@@ -1,26 +1,32 @@
+<div class="container">
 
-
-<div style="margin: 15px;">
-<table class="table">
-
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>name</th>
-            <th>Config</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let us of server">
-            <th scope="row">{{ us.id }}</th>
-            <td>{{ us.name }}</td>
-
-            <td>
-                <button class="btn btn-danger btn-sm" (click)="DeleteServer(us.id)">delete</button>
-                <button class="btn btn-primary btn-sm mx-2" routerLink="/preview/{{ us.id }}">Preview</button>
-            </td>
-
-        </tr>
-    </tbody>
-</table>
+    <div [ngClass]="{'home':true}">
+        <div style="margin: 15px;">
+            <table class="table">
+    
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>name</th>
+                        <th>Delete</th>
+                        <th>Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let us of server">
+                        <th scope="row">{{ us.id }}</th>
+                        <td>{{ us.name }}</td>
+    
+                        <td>
+                            <button class="btn btn-danger btn-sm" (click)="DeleteServer(us.id)">delete</button>
+                            
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-sm mx-2" routerLink="/preview/{{ us.id }}">Preview</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

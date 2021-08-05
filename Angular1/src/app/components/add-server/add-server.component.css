@@ -1,4 +1,4 @@
-input,textarea {
+/* input,textarea {
     padding: 0px 8px 4px 8px;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -12,7 +12,45 @@ input,textarea {
     font-size: 16px;
     letter-spacing: 1px
     
+} */
+.home {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 278px);
+  left: 261px;
+  transition: all 0.5s;
 }
-body{
-margin: 20px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-top: 1rem;
+}
+.card-single {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 7px;
+  box-shadow:  0 5px 10px rgb(0, 0, 0, 0.2);
+}
+
+.card-single div:last-child span {
+  font-size: 3rem;
+  color: gray;
+}
+.card-single div:first-child span {
+  color: gray;
+}
+.card-single:last-child {
+  background: black;
+}
+.card-single:last-child h1 {
+  color:#FFF ;
+}
+.card-single:last-child div:last-child sapn {
+  color: white;
+}
+.card-single:last-child div:last-child sapn {
+  color: #fff;
 }

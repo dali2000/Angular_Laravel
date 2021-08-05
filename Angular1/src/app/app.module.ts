@@ -22,10 +22,6 @@ import { Ec2EditComponent } from './components/ec2-edit/ec2-edit.component';
 import { S3EditComponent } from './components/s3-edit/s3-edit.component';
 import { PreviewServerComponent } from './components/preview-server/preview-server.component';
 import { SEditComponent } from './components/s-edit/s-edit.component';
-
-
-;
-
 const appRoutes:Routes = [
  
 
@@ -53,7 +49,7 @@ const appRoutes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-
+    
     NavbarComponent,
     InscriComponent,
 
@@ -88,7 +84,7 @@ const appRoutes:Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,69 +1,71 @@
-<div style="margin: 15px;">
-<table class="table" >
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">server name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">{{s.id}}</th>
-            <td>{{s.name}}</td>
-        </tr>
-
-    </tbody>
-</table>
-<div class="row">
-    <div class="col-4">
-        <div class="card" *ngFor="let us of ec2">
-            <div class="card-header">
-                <h6>Ec2: </h6>
+<div [ngClass]="{'home':true}">
+    <div style="margin: 15px;">
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">server name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{s.id}}</th>
+                    <td>{{s.name}}</td>
+                </tr>
+        
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" *ngFor="let us of ec2">
+                    <div class="card-header">
+                        <h6>Ec2: </h6>
+                    </div>
+                    <div class="card-body">
+                        <h6>SeverName: </h6>
+                        <p>{{us.ServerName}}</p>
+                        <h6>Type</h6>
+                        <p>{{us.Type}}</p>
+                        <h6>Storage</h6>
+                        <p>{{us.Storage}}</p>
+                        <h6>Firwall</h6>
+                        <p>{{us.Firwall}}</p>
+                        <h6>Machine</h6>
+                        <p>{{us.Machine}}</p>
+                        <button class="btn btn-outline-warning" routerLink="/addServer/ec2-edit/{{ us.id }}">Edit</button>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <h6>SeverName: </h6>
-                <p>{{us.ServerName}}</p>
-                <h6>Type</h6>
-                <p>{{us.Type}}</p>
-                <h6>Storage</h6>
-                <p>{{us.Storage}}</p>
-                <h6>Firwall</h6>
-                <p>{{us.Firwall}}</p>
-                <h6>Machine</h6>
-                <p>{{us.Machine}}</p>
-                <button class="btn btn-outline-warning" routerLink="/addServer/ec2-edit/{{ us.id }}">Edit</button>
+            <div class="col-md-4">
+                <div class="card" *ngFor="let cd of cdn">
+                    <div class="card-header">
+                        <h6>Cdn: </h6>
+                    </div>
+                    <div class="card-body">
+                        <h6>Private Bucket:</h6>
+                        <p>{{cd.PrivateBucket}}</p>
+                        <h6>PublicBucket: </h6>
+                        <p>{{cd.PublicBucket}}</p>
+                        <h6>Region: </h6>
+                        <p>{{cd.Region}}</p>
+                        <button class="btn btn-outline-warning" routerLink="/addServer/s3-edit/{{ cd.id }}">Edit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" *ngFor="let sq of sqs">
+                    <div class="card-header">
+                        <h6>Sqs: </h6>
+                    </div>
+                    <div class="card-body">
+                        <h6>Quere_Name: </h6>
+                        <p>{{sq.Quere_Name}}</p>
+                        <h6>Region</h6>
+                        <p>{{sq.Region}}</p>
+                        <button class="btn btn-outline-warning" routerLink="/addServer/s-edit/{{ sq.id }}" >Edit</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-4">
-        <div class="card" *ngFor="let cd of cdn">
-            <div class="card-header">
-                <h6>Cdn: </h6>
-            </div>
-            <div class="card-body">
-                <h6>Private Bucket:</h6>
-                <p>{{cd.PrivateBucket}}</p>
-                <h6>PublicBucket: </h6>
-                <p>{{cd.PublicBucket}}</p>
-                <h6>Region: </h6>
-                <p>{{cd.Region}}</p>
-                <button class="btn btn-outline-warning" routerLink="/addServer/s3-edit/{{ cd.id }}">Edit</button>
-            </div>
         </div>
-    </div>
-    <div class="col-4">
-        <div class="card" *ngFor="let sq of sqs">
-            <div class="card-header">
-                <h6>Sqs: </h6>
-            </div>
-            <div class="card-body">
-                <h6>Quere_Name: </h6>
-                <p>{{sq.Quere_Name}}</p>
-                <h6>Region</h6>
-                <p>{{sq.Region}}</p>
-                <button class="btn btn-outline-warning" routerLink="/addServer/s-edit/{{ sq.id }}" >Edit</button>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
