@@ -1,6 +1,6 @@
 <div [ngClass]="{'home':true}">
-    <div class="card">
-        <div class="card-header">S3/CDN</div>
+    <div class="box">
+        <h3>S3/CDN</h3>
         <div class="card-body">
             
             <form #s3form="ngForm" class="form-group">
@@ -44,14 +44,12 @@
     
     
                 <div class="row justify-content-between">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-primary" routerLink="" (click)="go('ec2')">Privous</button>
-                    </div>
+
     
     
-                    <div class="col-4">
+                    <div class="col-sm-4">
                         <a routerLink="/preview/{{id2}}" >
-                            <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3form.valid" (click)="updateCdn(s3)"
+                            <button type="button" class="btn btn-warning" id="btnsign" [disabled]="!s3form.valid" (click)="updateCdn(s3)" id="btn2"
                             >Next</button>
                         </a>
                     </div>

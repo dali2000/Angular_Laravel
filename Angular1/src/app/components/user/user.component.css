@@ -1,0 +1,16 @@
+
+#btn1 {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    transition: all 0.5s;
+}
+#btn1:hover {
+  background-color: #ffffff;
+  border: 1px solid black;
+  color: black;
+}
+#btn2 {
+  color: white;
+
+}

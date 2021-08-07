@@ -10,7 +10,7 @@ export class ServComponent implements OnInit {
   constructor(private dataService:DataService) { }
  
   server : any;
-
+  data2:any;
 
   data: any;
   se1 = new Server();
@@ -18,7 +18,8 @@ export class ServComponent implements OnInit {
 
   getServers(){
     this.dataService.getServers().subscribe(res =>{
-      this.server = res;
+      this.data2 = res;
+      this.server = this.data2.server
     });
   }
 

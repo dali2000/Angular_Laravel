@@ -45,11 +45,13 @@ export class Ec2EditComponent implements OnInit {
   }
 
   update() {
+    
     console.log(this.ec2form);
     this.dataService.updateEc3(this.id, this.ec2form).subscribe(res => {
       console.log(res);
 
     });
+    
     console.log(this.ec2form);
   }
   go() {

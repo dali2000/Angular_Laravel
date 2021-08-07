@@ -22,14 +22,15 @@ import { Ec2EditComponent } from './components/ec2-edit/ec2-edit.component';
 import { S3EditComponent } from './components/s3-edit/s3-edit.component';
 import { PreviewServerComponent } from './components/preview-server/preview-server.component';
 import { SEditComponent } from './components/s-edit/s-edit.component';
+import { DashboredComponent } from './components/dashbored/dashbored.component';
 const appRoutes:Routes = [
  
-
   { path: 'User', component:UserComponent },
   { path: 'Inscri', component:InscriComponent},
   { path: 'EditUser/:id', component:UserEditComponent},
   { path: 'login', component:LoginComponent},
   { path: 'preview/:id', component:PreviewServerComponent},
+  { path: 'dashbored', component:DashboredComponent},
   { path: 'servers',
    component:ServComponent,},
   { path: 'addServer' ,
@@ -74,6 +75,8 @@ const appRoutes:Routes = [
     PreviewServerComponent,
    
     SEditComponent,
+   
+    DashboredComponent,
    
 
 

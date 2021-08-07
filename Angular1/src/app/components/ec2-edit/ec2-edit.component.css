@@ -5,3 +5,34 @@
   border-radius:12px;
   box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
 }
+#btn1 {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+#btn1:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+@media only screen and (max-width: 360px) {
+  .box{
+    width:240px;
+    margin-top:10px;
+    
+  }
+  #btn1 {
+  margin-top: 10px;
+  width: 95%;
+  display: block;
+  margin: auto;
+  }
+  #btn2{
+    margin-top: 10px;
+    color:white;
+    margin-bottom: 10px;
+  
+  }
+  
+  }

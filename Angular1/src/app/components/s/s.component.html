@@ -1,6 +1,6 @@
 <div [ngClass]="{'home':true}">
-    <div class="card">
-        <div class="card-header">Sqs</div>
+    <div class="box">
+        <h3>Sqs</h3>
         <div class="card-body">
             <form #form="ngForm">
     
@@ -53,12 +53,12 @@
     
     
                 <div class="row justify-content-between">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-primary" routerLink="" (click)="go('s3')">Privous</button>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-warning" routerLink="" (click)="go('s3')" id="btn2">Privous</button>
                     </div>
-                    <div class="col-4">
+                    <div class="col-sm-4">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="add(s)">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="add(s)" id="btn1">
                             Next
                         </button>
                         <!-- Modal -->

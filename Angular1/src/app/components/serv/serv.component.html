@@ -18,11 +18,11 @@
                         <td>{{ us.name }}</td>
     
                         <td>
-                            <button class="btn btn-danger btn-sm" (click)="DeleteServer(us.id)">delete</button>
+                            <button class="btn btn-danger btn-sm" (click)="DeleteServer(us.id)" id="btn1">delete</button>
                             
                         </td>
                         <td>
-                            <button class="btn btn-primary btn-sm mx-2" routerLink="/preview/{{ us.id }}">Preview</button>
+                            <button class="btn btn-warning btn-sm mx-2" routerLink="/preview/{{ us.id }}" id="btn2">Preview</button>
                         </td>
                     </tr>
                 </tbody>

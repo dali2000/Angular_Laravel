@@ -82,7 +82,12 @@ updateS3(id,data){
 updateSqs(id,data){
   return this.httpClient.post('http://127.0.0.1:8000/updateSqs/'+id,data)
 }
-
+getNbS(){
+  return this.httpClient.get('http://127.0.0.1:8000/nbS');
+}
+getNbU(){
+  return this.httpClient.get('http://127.0.0.1:8000/nbU');
+}
 
 
 private idSaurce = new BehaviorSubject<number>(1);

@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  public check =false
+  public check =true
   public toggle(){
     if(this.check==true){
       this.check=false

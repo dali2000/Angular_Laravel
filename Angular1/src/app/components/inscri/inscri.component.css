@@ -1,4 +1,4 @@
- input,textarea {
+ /* input,textarea {
     padding: 0px 8px 4px 8px;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -12,11 +12,33 @@
     font-size: 16px;
     letter-spacing: 1px;
     outline-style: none;
-}
+} */
 .ng-invalid:not(form){
     border-bottom:2px solid rgb(237, 241, 251);
 }
 .ng-valid:not(form){
     border-bottom:2px solid rgb(135, 161, 255);
 }
+.box{
+    margin-top:50px;
+    border:none;
+    padding:25px;
+    border-radius:12px;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+  }
+  #btnsign{
+    color: white;
 
+  }
+  @media only screen and (max-width: 360px) {
+    .box{
+      width:240px;
+      margin-top:10px;
+      padding:5px;
+    }
+    #btnsign{
+        width: 95%;
+        display: block;
+        margin: auto;
+      }
+  }

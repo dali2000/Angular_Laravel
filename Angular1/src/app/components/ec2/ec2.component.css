@@ -6,9 +6,15 @@
   transition: all 0.5s;
 }
 #btn1:hover {
-  background-color: white;
+  background-color: #ffffff;
   border: 1px solid black;
   color: black;
+}
+#btn2{
+  
+  color:white;
+  margin-bottom: 10px;
+
 }
 .box{
   margin-top:50px;
@@ -28,9 +34,15 @@
 }
 #btn1 {
 margin-top: 10px;
+width: 95%;
+display: block;
+margin: auto;
 }
 #btn2{
   margin-top: 10px;
   color:white;
+  margin-bottom: 10px;
+
 }
+
 }
