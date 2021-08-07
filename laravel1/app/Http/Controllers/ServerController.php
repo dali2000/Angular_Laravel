@@ -11,8 +11,17 @@ use SebastianBergmann\Environment\Console;
 class ServerController extends Controller
 {
     public function getServers()
-    {
+    {   
+        $server = Server::all();
+        $response['message'] = 'server founded';
+        $response['code'] = 200;
+        $response['server'] = $server;
+        return response()->json($response);
         return response()->json(Server::all(), 200);
+    }
+    public function nbS(){
+        $count =  Server::all()->count();
+        return response()->json($count);
     }
     public function addServer(Request $request)
     {

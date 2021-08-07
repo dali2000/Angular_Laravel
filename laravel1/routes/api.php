@@ -31,7 +31,7 @@ Route::post('register', 'UserController@register');
 
 //get specefique user
 Route::get('user/{id}', 'UserController@getUserByid');
-
+Route::get('nbU', 'UserController@nbU');
 //add user
 Route::post('addUser', 'UserController@addUser');
 //Update user
@@ -77,7 +77,7 @@ Route::delete('DeleteServer/{id}', 'ServerController@DeleteServer');
 Route::get('getServerEc2', 'ServerController@getServerEc2/{id}');
 Route::get('getServerCdn', 'ServerController@getServerCdn/{id}');
 
-
+Route::get('nbS','ServerController@nbS');
 //auth
 Route::post('postRegister','RegisterController@postRegister');
 Route::post('login', 'LoginController@login');

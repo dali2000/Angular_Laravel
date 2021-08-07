@@ -46,7 +46,10 @@ class UserController extends Controller
         return response()->json(null, 204);
     }
 
-
+    public function nbU(){
+        $count =  User::all()->count();
+        return response()->json($count);
+    }
 
 
 
