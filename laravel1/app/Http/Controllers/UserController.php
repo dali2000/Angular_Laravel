@@ -34,7 +34,13 @@ class UserController extends Controller
             return response()->json(['message' => 'User not found'], 404);
         }
         $user->update($request->all());
-        return response($user, 200);
+
+        $response['message'] = 'user Updated';
+        $response['code'] = 200;
+        $response['user'] = $user;
+
+        return response()->json($response);
+        
     }
     public function deleteUser(Request $request, $id)
     {
@@ -46,26 +52,20 @@ class UserController extends Controller
         return response()->json(null, 204);
     }
 
-    public function nbU(){
+    public function nbU()
+    {
         $count =  User::all()->count();
         return response()->json($count);
     }
 
 
 
-    public function index(){
+    public function index()
+    {
         return User::all();
     }
-    public function user(Request $request){
+    public function user(Request $request)
+    {
         return $request->user();
     }
-
-
-
-
-  
-
-
-
-  
 }
