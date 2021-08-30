@@ -19,18 +19,30 @@ export class InscriComponent implements OnInit {
 
   }
   public message =""
+  public messageAlert=""
   public data: any;
   ngOnInit(): void {
+    if(this.messageAlert!=""){
+      this.messageAlert=""
+    }
   }
-  
+
   add(){
     this.dataService.submit(this.form).subscribe(res =>{
       console.log(res);
       this.data = res;
       this.message = this.data.message;
 
-      console.log(this.data);
+      if(this.messageAlert!=""){
+        this.messageAlert=""
+      }
+
+
     });
+
+    if(this.message==""){
+      this.messageAlert='user exist'
+    }
 
     
   }

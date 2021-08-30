@@ -10,6 +10,7 @@ import { User } from 'src/app/user';
 export class UserEditComponent implements OnInit {
   id: any;
   data: any;
+  message = "";
   user1 = new User();
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
@@ -27,7 +28,9 @@ export class UserEditComponent implements OnInit {
   }
   updateUser() {
     this.dataService.updateUser(this.id, this.user1).subscribe(res => {
-
+        this.data = res;
+        this.message = this.data.message
+        console.log(this.message)
     });
   }
 

@@ -1,40 +1,46 @@
-<div class="box">
-    <div class="container">
-        <form (ngSubmit)="updateUser()">
-            <div class="row form-group">
-                <div class="col-sm">
-                    <label for="">First Name</label>
-                    <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="user1.first_name" [ngModelOptions]="{standalone: true}">
+<div [ngClass]="{'home':true}">
+    <div class="box">
+        
+        <div class="container">
+            <div class="alert alert-info" [hidden]="!message">
+                {{message}}
+            </div>
+            <form (ngSubmit)="updateUser()">
+                <div class="row form-group">
+                    <div class="col-sm">
+                        <label for="">First Name</label>
+                        <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="user1.first_name" [ngModelOptions]="{standalone: true}">
+                    </div>
+    
                 </div>
-
-            </div>
-            <div class="row form-group">
-                <div class="col-sm">
-                    <label for="">Lasr Name</label>
-                    <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="user1.last_name" [ngModelOptions]="{standalone: true}">
+                <div class="row form-group">
+                    <div class="col-sm">
+                        <label for="">Lasr Name</label>
+                        <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="user1.last_name" [ngModelOptions]="{standalone: true}">
+                    </div>
+    
                 </div>
-
-            </div>
-            <div class="row form-group">
-                <div class="col-sm">
-                    <label for="">Email</label>
-                    <input type="text" class="form-control" placeholder="Email"  [(ngModel)]="user1.email" [ngModelOptions]="{standalone: true}">
+                <div class="row form-group">
+                    <div class="col-sm">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" placeholder="Email"  [(ngModel)]="user1.email" [ngModelOptions]="{standalone: true}">
+                    </div>
+    
                 </div>
-
-            </div>
-            <div class="row form-group">
-                <div class="col-md">
-                    <label for="">password</label>
-                    <input type="text" class="form-control" placeholder="password"  [(ngModel)]="user1.password" [ngModelOptions]="{standalone: true}">
+                <div class="row form-group">
+                    <div class="col-md">
+                        <label for="">password</label>
+                        <input type="text" class="form-control" placeholder="password"  [(ngModel)]="user1.password" [ngModelOptions]="{standalone: true}">
+                    </div>
+    
+    
+                    
                 </div>
-
-
-                
-            </div>
-            <div class="">
-                <button type="submit"  class="btn btn-success" id="btnsign">Update</button>
-            </div>
-           
-        </form>
+                <div class="">
+                    <button type="submit"  class="btn btn-warning" id="btn2">Update</button>
+                </div>
+               
+            </form>
+        </div>
     </div>
 </div>

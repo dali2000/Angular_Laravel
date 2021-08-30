@@ -1,43 +1,43 @@
 <div [ngClass]="{'sidebar':true,'active':check}" >
     <div class="log_content">
-        <div class="logo">
+        <div class="logo" >
             <i class='bx bx-qr-scan'></i>
             <div class="logo_name">ServersLab</div>
         </div>
-        <i class='bx bx-menu-alt-left' id="btn" (click)="toggle()"></i>
+        <i class='bx bx-menu-alt-left' id="btn" (click)="toggle()" ></i>
     </div>
     <ul class="nav_list">
         <li>
             <a routerLink="/dashbored">
-                <i class='bx bx-grid-alt'></i>
+                <i class='bx bx-grid-alt' style="color: orange;"></i>
                 <span class="links_name">Dashbored</span>
             </a>
             <span class="tool">Dashbored</span>
         </li>
         <li>
             <a routerLink="/User">
-                <i class='bx bx-user-pin'></i>
+                <i class='bx bx-user-pin' style="color: orange;"></i>
                 <span class="links_name">Users</span>
             </a>
             <span class="tool">Users</span>
         </li>
         <li>
             <a routerLink="/Inscri">
-                <i class='bx bx-user-plus'></i>
+                <i class='bx bx-user-plus' style="color: orange;"></i>
                 <span class="links_name">Add User</span>
             </a>
             <span class="tool">Add User</span>
         </li>
         <li>
             <a routerLink="/servers">
-                <i class='bx bx-server'></i>
+                <i class='bx bx-server' style="color: orange;"></i>
                 <span class="links_name">Servers</span>
             </a>
             <span class="tool">Servers</span>
         </li>
         <li>
             <a routerLink="/addServer/ec2">
-                <i class='bx bxs-add-to-queue'></i>
+                <i class='bx bxs-add-to-queue' style="color: orange;"></i>
                 <span class="links_name">Add Server</span>
             </a>
             <span class="tool">Add Server</span>
@@ -51,7 +51,7 @@
                     <div class="job">Web Design</div>
                 </div>
             </div>
-            <i class='bx bxs-log-out' id="log_out"></i>
+            <i class='bx bxs-log-out' id="log_out" style="color: orange;"></i>
         </div>
     </div>
 </div>

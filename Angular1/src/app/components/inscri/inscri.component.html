@@ -6,7 +6,9 @@
             <div class="alert alert-info" [hidden]="!message">
                 {{message}}
             </div>
-
+            <div class="alert alert-danger" [hidden]="!messageAlert">
+                {{messageAlert}}
+            </div>
 
 
             <form #signForm="ngForm" (ngSubmit)="add()">
