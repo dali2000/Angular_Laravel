@@ -13,18 +13,29 @@ export class LoginComponent implements OnInit {
     password:null
   }
   public error = null;
+  user:any;
   ngOnInit(): void {
+    this.dataService.currentUser.subscribe(user1 => this.user = user1)
   }
 
   login(){
     // console.log(this.form);
     this.dataService.login(this.form).subscribe(res =>{
       console.log(res);
+      this.user = res;
       error => this.handleError(error);
+      this.newUser();
     })
+    this.newUser();
+    
   }
   handleError(error){
     this.error = error.error.error;
   }
+  newUser(){
+    this.dataService.changeUser(this.user)
+  }
+
+
 
 }

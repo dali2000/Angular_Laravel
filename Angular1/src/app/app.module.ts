@@ -31,6 +31,7 @@ const appRoutes:Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'preview/:id', component:PreviewServerComponent},
   { path: 'dashbored', component:DashboredComponent},
+  { path: '', component:LoginComponent},
   { path: 'servers',
    component:ServComponent,},
   { path: 'addServer' ,

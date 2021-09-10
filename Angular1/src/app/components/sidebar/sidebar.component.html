@@ -1,4 +1,4 @@
-<div [ngClass]="{'sidebar':true,'active':check}" >
+<div [ngClass]="{'sidebar':true,'active':check}"  style="z-index: 1000;">
     <div class="log_content">
         <div class="logo" >
             <i class='bx bx-qr-scan'></i>
@@ -47,7 +47,7 @@
         <div class="profile">
             <div class="profile_details">
                 <div class="name_job">
-                    <div class="name">Dali kbaier</div>
+                    <div class="name">{{user.first_name}}</div>
                     <div class="job">Web Design</div>
                 </div>
             </div>

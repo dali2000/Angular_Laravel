@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private dataService: DataService) { }
+  user:any;
+  user1:any;
   ngOnInit(): void {
-
+    this.dataService.currentUser.subscribe(user1 => this.user = user1)
   }
   public check =true
   public toggle(){
@@ -22,5 +23,6 @@ export class SidebarComponent implements OnInit {
     }
     
   }
+
 
 }

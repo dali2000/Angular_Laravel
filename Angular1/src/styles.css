@@ -119,6 +119,7 @@
 .sidebar .links_name {
   opacity: 0;
   pointer-events: none;
+  color: white;
 }
 .sidebar.active .links_name {
   opacity: 1;
