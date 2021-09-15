@@ -90,11 +90,12 @@ export class DataService {
   }
 
   public user = {
-    id: 1,
-    email: "medalikebair@gmail.com",
+    id: "",
+    email: "",
     permissions: null,
-    last_login: "2021-09-10T09:45:35.859029Z",
-    first_name: "kbaier"
+    last_login: "",
+    first_name: "",
+    last_name:""
   }
   private idSaurce = new BehaviorSubject<number>(1);
   private userSaurce = new BehaviorSubject<any>(this.user);

@@ -23,6 +23,7 @@ import { S3EditComponent } from './components/s3-edit/s3-edit.component';
 import { PreviewServerComponent } from './components/preview-server/preview-server.component';
 import { SEditComponent } from './components/s-edit/s-edit.component';
 import { DashboredComponent } from './components/dashbored/dashbored.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 const appRoutes:Routes = [
  
   { path: 'User', component:UserComponent },
@@ -79,6 +80,7 @@ const appRoutes:Routes = [
    
     DashboredComponent,
    
+   
 
 
     
@@ -86,6 +88,7 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    GoogleChartsModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
@@ -93,4 +96,5 @@ const appRoutes:Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}

@@ -12,6 +12,9 @@ export class SidebarComponent implements OnInit {
   user1:any;
   ngOnInit(): void {
     this.dataService.currentUser.subscribe(user1 => this.user = user1)
+    
+    this.user = this.user1;
+    console.log(this.user)
   }
   public check =true
   public toggle(){
