@@ -81,3 +81,7 @@ Route::get('nbS','ServerController@nbS');
 //auth
 Route::post('postRegister','RegisterController@postRegister');
 Route::post('login', 'LoginController@login');
+
+
+
+Route::post('login1' , 'UserController@login');
