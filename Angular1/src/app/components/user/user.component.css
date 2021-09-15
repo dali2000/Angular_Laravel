@@ -11,6 +11,15 @@
   color: black;
 }
 #btn2 {
+  background-color: rgb(81, 136, 247);
+  border: 1px solid rgb(81, 136, 247);
   color: white;
 
+}
+
+#btn2:hover{
+  background-color: white;
+  border: 1px solid rgb(81, 136, 247);
+  color: rgb(81, 136, 247);
+  transition: all 0.5s;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,6 +17,9 @@ export class LoginComponent implements OnInit {
   public error = null;
   data:any;
   token:any;
+  message = ""
+  user:any;
+  user1:any;
   ngOnInit(): void {
     // this.dataService.currentUser.subscribe(user1 => this.user = user1)
   }
@@ -25,12 +29,16 @@ export class LoginComponent implements OnInit {
     this.dataService.login(this.form).subscribe(res =>{
       console.log(res);
       this.data = res;
+      this.message = this.data.message
       // error => this.handleError(error);
       // this.newUser();
       if(this.data.status ===1){
         this.token = this.data.data.token;
         localStorage.setItem('token',this.token);
-        this.router.navigate((['/dashbored']))
+        this.token = localStorage.getItem('token');
+        this.user = jwtDecode(this.token);
+        this.getdata();
+        
       }else{
         this.router.navigate((['/login']))
       }
@@ -45,6 +53,17 @@ export class LoginComponent implements OnInit {
   //   this.dataService.changeUser(this.user)
   // }
 
+  getdata(){
+    this.dataService.getUserById(this.user.user_id).subscribe(res => {
+      this.user1 = res;
+      console.log(this.user1)
 
+      if(this.user1.role=="admin"){
+        this.router.navigate((['/dashbored']))
+      }else{
+        this.router.navigate((['/servers']))
+      }
+    })
+  }
 
 }

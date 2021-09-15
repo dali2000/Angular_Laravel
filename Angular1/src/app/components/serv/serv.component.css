@@ -13,4 +13,12 @@
 #btn2 {
   color: white;
   margin-bottom: 10px;
+  background-color: rgb(81, 136, 247);
+  border:1px solid rgb(81, 136, 247);
+}
+#btn2:hover{
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(81, 136, 247);
+  color:rgb(81, 136, 247);
+  transition: all 0.5s;
 }

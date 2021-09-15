@@ -6,18 +6,21 @@
       <div class="card-body">
 
         <form form #Form="ngForm" (ngSubmit)="login()">
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
               [(ngModel)]="form.email" [ngModelOptions]="{standalone: true}" required name="email">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="form.password"
               [ngModelOptions]="{standalone: true}" required name="password">
+              <div style="color: rgb(167, 23, 23);" [hidden]="!message">
+                <i class='bx bxs-error'></i>&nbsp;{{message}}</div>
+             
           </div>
-
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>

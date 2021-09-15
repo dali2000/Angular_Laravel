@@ -183,3 +183,11 @@ display: block;
 .sidebar.active .home_content .container{
   margin:50px;
 } */
+
+i{
+  color: rgb(81, 136, 247);
+}
+i:hover{
+  color: white;
+}
+

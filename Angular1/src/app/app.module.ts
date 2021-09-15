@@ -24,6 +24,7 @@ import { PreviewServerComponent } from './components/preview-server/preview-serv
 import { SEditComponent } from './components/s-edit/s-edit.component';
 import { DashboredComponent } from './components/dashbored/dashbored.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { ProfilComponent } from './components/profil/profil.component';
 const appRoutes:Routes = [
  
   { path: 'User', component:UserComponent },
@@ -32,6 +33,7 @@ const appRoutes:Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'preview/:id', component:PreviewServerComponent},
   { path: 'dashbored', component:DashboredComponent},
+  {path: 'profil' , component:ProfilComponent},
   { path: '', component:LoginComponent},
   { path: 'servers',
    component:ServComponent,},
@@ -79,6 +81,10 @@ const appRoutes:Routes = [
     SEditComponent,
    
     DashboredComponent,
+   
+    ProfilComponent,
+   
+    
    
    
 

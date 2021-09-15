@@ -13,8 +13,10 @@ export class SidebarComponent implements OnInit {
   user:any;
   user1:any;
   token:any;
+  test = true;
 
   ngOnInit(): void {
+    
     this.token = localStorage.getItem('token');
     this.user = jwtDecode(this.token);
     console.log(this.token);
@@ -41,7 +43,15 @@ export class SidebarComponent implements OnInit {
   getdata(){
     this.dataService.getUserById(this.user.user_id).subscribe(res => {
       this.user1 = res;
-      console.log(this.user1)
+      if(this.user1.role == "admin"){
+        this.test = false;
+        console.log(this.test)
+      }
+      else{
+        console.log(this.test)
+      }
+
+   
     })
   }
 

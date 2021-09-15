@@ -21,8 +21,8 @@
                     <td>{{ us.email }}</td>
                     <td>{{ us.role }}</td>
                     <td>
-                        <button class="btn btn-warning btn-sm" (click)="deleteData(us.id)" id="btn2">delete</button>
-                        <button class="btn btn-warning btn-sm mx-2" routerLink="/EditUser/{{ us.id }}" id="btn1">Edit</button>
+                        <button class="btn btn-primary btn-sm" (click)="deleteData(us.id)" id="btn1">delete <i class='bx bx-trash'></i></button>
+                        <button class="btn btn-primary btn-sm mx-2" routerLink="/EditUser/{{ us.id }}" id="btn2">Edit <i class='bx bxs-edit' ></i></button>
                     </td>
 
                 </tr>
