@@ -15,7 +15,7 @@ export class DataService {
     return this.httpClient.get('http://127.0.0.1:8000/users');
   }
   submit(data) {
-    return this.httpClient.post('http://127.0.0.1:8000/postRegister', data);
+    return this.httpClient.post('http://127.0.0.1:8000/register', data);
   }
   deleteUserData(id) {
     return this.httpClient.delete('http://127.0.0.1:8000/deleteUser/' + id);
@@ -27,7 +27,7 @@ export class DataService {
     return this.httpClient.post('http://127.0.0.1:8000/updateUser/' + id, data);
   }
   login(data) {
-    return this.httpClient.post('http://127.0.0.1:8000/login/', data)
+    return this.httpClient.post('http://127.0.0.1:8000/login1/', data)
   }
 
   //s3

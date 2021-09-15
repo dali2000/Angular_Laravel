@@ -14,9 +14,9 @@ export class InscriComponent implements OnInit {
   public form = {
     email:null,
     password:null,
+    role:null,
     first_name:null,
-    last_name:null
-
+    last_name:null 
   }
   public message =""
   public messageAlert=""
@@ -28,21 +28,16 @@ export class InscriComponent implements OnInit {
   }
 
   add(){
+   console.log(this.form)
     this.dataService.submit(this.form).subscribe(res =>{
       console.log(res);
       this.data = res;
       this.message = this.data.message;
 
-      if(this.messageAlert!=""){
-        this.messageAlert=""
-      }
-
 
     });
 
-    if(this.message==""){
-      this.messageAlert='user exist'
-    }
+
 
     
   }

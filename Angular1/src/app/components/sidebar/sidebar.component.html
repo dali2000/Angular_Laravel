@@ -47,11 +47,11 @@
         <div class="profile">
             <div class="profile_details">
                 <div class="name_job">
-                    <div class="name">{{user.last_name}}</div>
-                    <div class="job">Web Design</div>
+                    <div class="name">{{user1.email}}</div>
+                    <div class="job">{{user1.role}}</div>
                 </div>
             </div>
-            <i class='bx bxs-log-out' id="log_out" style="color: orange;"></i>
+            <a (click)="logout()"><i class='bx bxs-log-out' id="log_out" style="color: orange;"></i></a>
         </div>
     </div>
 </div>

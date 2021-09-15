@@ -1,14 +1,13 @@
+<app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
     <br><br>
     <h1>Add Users</h1>
     <div class="box">
-        <div class="container">
+        <div class="container" >
             <div class="alert alert-info" [hidden]="!message">
                 {{message}}
             </div>
-            <div class="alert alert-danger" [hidden]="!messageAlert">
-                {{messageAlert}}
-            </div>
+
 
 
             <form #signForm="ngForm" (ngSubmit)="add()">
@@ -36,6 +35,18 @@
                         <label for="password">password</label>
                         <input type="password" placeholder="password" [(ngModel)]="form.password" name="password"
                             id="password" required class="form-control">
+                    </div>
+
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label for="">Type of User</label>
+                        <select name="role" id="" class="form-control" [(ngModel)]="form.role"
+                            [ngModelOptions]="{standalone: true}" required>
+                            <option value="admin">Admin</option>
+                            <option value="user">Simple User</option>
+
+                        </select>
                     </div>
                 </div>
 
