@@ -17,7 +17,8 @@ export class Ec2Component implements OnInit {
   public server = {
     name: null
   }
-
+  ec: any;
+  id2: null
   public ec2form = {
     
     idServer:null ,
@@ -63,6 +64,8 @@ export class Ec2Component implements OnInit {
   id :number;
   ngOnInit(): void {
     this.dataService.currentId.subscribe(id =>this.id =id)
+    this.getEc3();
+    console.log(this.id)
   }
   newId(){
     this.dataService.changeId(this.ec2form.idServer);
@@ -76,5 +79,14 @@ export class Ec2Component implements OnInit {
       this.check=true
     }
     
+  }
+  getEc3() {
+    this.dataService.getEc3ById(this.id).subscribe(res => {
+      console.log(res);
+      this.ec = res;
+      this.ec2form = this.ec;
+      this.id2 = this.ec2form.idServer
+    });
+    console.log(this.id);
   }
 }

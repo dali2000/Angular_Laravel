@@ -15,6 +15,8 @@ export class SEditComponent implements OnInit {
   id: any;
   s1 :any;
   id2: null
+  data:any
+  message = ""
   public s = new Sqs();
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -32,6 +34,9 @@ export class SEditComponent implements OnInit {
   updateSqs(s) {
     this.dataService.updateSqs(this.id,s).subscribe(res => {
       console.log(res);
+      this.data = res;
+      this.message = this.data.message
+      console.log(this.message)
     });
     
     

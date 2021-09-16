@@ -16,6 +16,8 @@ export class S3EditComponent implements OnInit {
   data: any
   id: number;
   id2: null
+  data1:any
+  message = ""
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.getS3();
@@ -30,6 +32,9 @@ export class S3EditComponent implements OnInit {
     console.log(this.s3);
     this.dataService.updateS3(this.id,s).subscribe(res => {
       console.log(res);
+      this.data1 = res;
+      this.message = this.data1.message
+      console.log(this.message)
     });
     
   }

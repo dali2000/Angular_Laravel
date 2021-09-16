@@ -222,7 +222,7 @@ a:hover{
     position: absolute;
     height: 100%;
     width: calc(100% - 117px);
-    left:100px;
+    left:117px;
     transition: all 0.5s;
   }
   

@@ -3,6 +3,9 @@
     <div class="box">
         <h3>Sqs</h3>
         <div class="card-body">
+            <div class="alert alert-success" [hidden]="!message">
+                {{message}}
+            </div>
             <form #form="ngForm">
     
                 <!-- <div class="col">
@@ -57,8 +60,8 @@
     
                     <div class="col-4">
     
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="updateSqs(s)" routerLink="/preview/{{id2}}" id="btn2">
-                            Next
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="updateSqs(s)" id="btn2">
+                            Save <i class='bx bxs-save'></i>
                         </button>
                     </div>
                 </div>

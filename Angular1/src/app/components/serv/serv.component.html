@@ -3,14 +3,14 @@
 
     <div [ngClass]="{'home':true}">
         <div style="margin: 15px;">
-            <table class="table">
+            <table class="table table-striped ">
     
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>name</th>
-                        <th>Delete</th>
-                        <th>Preview</th>
+                        <th>Action</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -19,10 +19,8 @@
                         <td>{{ us.name }}</td>
     
                         <td>
-                            <button class="btn btn-danger btn-sm" (click)="DeleteServer(us.id)" id="btn1">delete <i class='bx bx-trash'></i></button>
-                            
-                        </td>
-                        <td>
+                            <button class="btn btn-danger btn-sm" (click)="DeleteServer(us.id)" id="btn1">Delete <i class='bx bx-trash'></i></button>
+
                             <button class="btn btn-primary btn-sm mx-2" routerLink="/preview/{{ us.id }}" id="btn2">Preview <i class='bx bx-show'></i></button>
                         </td>
                     </tr>

@@ -14,6 +14,8 @@ export class Ec2EditComponent implements OnInit {
   id: any;
   ec: any;
   id2: null
+  data:any
+  message = ""
   public ec2 = new Ec2();
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -48,7 +50,9 @@ export class Ec2EditComponent implements OnInit {
     
     console.log(this.ec2form);
     this.dataService.updateEc3(this.id, this.ec2form).subscribe(res => {
-      console.log(res);
+      this.data = res;
+      this.message = this.data.message
+      console.log(this.message)
 
     });
     

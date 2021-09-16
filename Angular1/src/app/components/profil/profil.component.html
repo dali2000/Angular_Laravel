@@ -1,6 +1,62 @@
 <app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
-    <div style="margin: 15px;">
+    <div style="margin: 15px;margin-top:50px;">
         <h1>Your Profil</h1>
+        <br><br><br>
+        <div class="box">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sub">
+                        <button type="submit" class="btn btn-primary sub" id="btnS" style="float: right;" (click)="updateUser()" [disabled]="!is">save
+                            <i class='bx bxs-save' ></i></button>
+                    </div>
+
+                    <div class="sub">
+                        <button type="submit" class="btn btn-outline-primary sub" id="btnS" style="float: right;"
+                            (click)="toggle()">Edit <i class='bx bxs-edit'></i></button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success" [hidden]="!message">{{message}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: rgb(213, 213, 213);margin-top: 10px;">Last Name</h3>
+                    <input type="text" [(ngModel)]="user1.last_name" class="form-control" [disabled]="!is">
+                </div>
+
+                <div class="col-md-6">
+                    <h3 style="color: rgb(213, 213, 213);margin-top: 10px;">First Name</h3>
+                    <input type="text" [(ngModel)]="user1.first_name" class="form-control" [disabled]="!is">
+                </div>
+
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: rgb(213, 213, 213);margin-top: 10px;">Email</h3>
+                    <input type="text" [(ngModel)]="user1.email" class="form-control" [disabled]="!is">
+                </div>
+                <div class="col-md-6" [hidden]="!is">
+                    <h3 style="color: rgb(213, 213, 213);margin-top: 10px;">Password</h3>
+                    <input type="password" [(ngModel)]="user1.password" class="form-control" [disabled]="!is" >
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: rgb(213, 213, 213);margin-top: 10px;">User Type</h3>
+                    <h2 class="type">Simple {{user1.role}}</h2>
+                </div>
+            </div>
+
+
+
+        </div>
     </div>
 </div>
