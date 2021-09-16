@@ -185,9 +185,9 @@ display: block;
 } */
 
 i{
-  color: rgb(81, 136, 247);
+  color: white;
 }
 i:hover{
-  color: white;
+  color:rgb(81, 136, 247);
 }
 

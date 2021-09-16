@@ -13,6 +13,38 @@
     letter-spacing: 1px;
     outline-style: none;
 }
+
+.body{
+    padding:25px;
+    padding-top: 40px;
+    padding-bottom: 87px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+}
+.head{
+    text-align: center;
+    margin-bottom:25px;
+}
+.login{
+
+     position: absolute;
+    
+     width: 300px;
+     height: 200px;
+     z-index: 15;
+     top: 30%;
+     left: 50%;
+     margin: -100px 0 0 -150px;
+
+}
+.sub{
+    display: block;
+    margin: auto;
+}
+#btnS{
+    margin-top: 50px;
+    width:253px;
+}
 .ng-invalid:not(form){
     border-left:5px solid rgb(237, 241, 251);
 }

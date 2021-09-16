@@ -1,13 +1,15 @@
 <div class="container">
-  <div style="margin: 15px;">
+  <div class="login">
 
-    <div class="card">
-      <div class="card-header">Login</div>
-      <div class="card-body">
+    <div>
 
+      <div class="body">
+        <div class="head">
+          <h1>Login</h1>
+        </div>
         <form form #Form="ngForm" (ngSubmit)="login()">
 
-          <div class="mb-3">
+          <div>
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
               [(ngModel)]="form.email" [ngModelOptions]="{standalone: true}" required name="email">
@@ -17,11 +19,16 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="form.password"
               [ngModelOptions]="{standalone: true}" required name="password">
-              <div style="color: rgb(167, 23, 23);" [hidden]="!message">
-                <i class='bx bxs-error'></i>&nbsp;{{message}}</div>
-             
+            <div style="color: rgb(167, 23, 23);" [hidden]="!message">
+              <i class='bx bxs-error'></i>&nbsp;{{message}}
+            </div>
+
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="row">
+            <div class="sub">
+              <button type="submit" class="btn btn-primary" id="btnS">Submit</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
