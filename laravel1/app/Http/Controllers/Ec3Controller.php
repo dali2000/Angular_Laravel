@@ -32,7 +32,11 @@ class Ec3Controller extends Controller
             return response()->json(['message' => 'ec3 not found'], 404);
         }
         $ec3->update($request->all());
-        return response($ec3, 200);
+        
+        $response['message'] = 'updated with success';
+        $response['code'] = 200;
+        $response['ec3'] = $ec3;
+        return response()->json($response);
     }
     public function getEc3ByIdServer($id)
     {

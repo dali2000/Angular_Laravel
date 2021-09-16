@@ -26,8 +26,8 @@ class UserController extends Controller
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'role' => $request->role
-                
-                
+
+
 
             ]);
             $response['status'] = 1;
@@ -91,14 +91,17 @@ class UserController extends Controller
         if (is_null($user)) {
             return response()->json(['message' => 'User not found'], 404);
         }
-        $user->update($request->all());
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
 
+        $user->save();
         $response['message'] = 'user Updated';
         $response['code'] = 200;
         $response['user'] = $user;
 
         return response()->json($response);
-        
     }
     public function deleteUser(Request $request, $id)
     {
@@ -115,6 +118,4 @@ class UserController extends Controller
         $count =  User::all()->count();
         return response()->json($count);
     }
-
-
 }

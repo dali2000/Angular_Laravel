@@ -29,7 +29,10 @@ class CdnController extends Controller
             return response()->json(['message'=>'s3 not found'],404);
         }
         $s3->update($request->all());
-        return response($s3,200);
+        $response['message'] = 'updated with success';
+        $response['code'] = 200;
+        $response['s3'] = $s3;
+        return response()->json($response);
     }
     public function getCdn3ByIdServer($id)
     {

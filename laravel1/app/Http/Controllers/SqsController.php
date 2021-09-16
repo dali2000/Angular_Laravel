@@ -32,7 +32,10 @@ class SqsController extends Controller
             return response()->json(['message' => 's3 not found'], 404);
         }
         $sqs->update($request->all());
-        return response($sqs, 200);
+        $response['message'] = 'updated with success';
+        $response['code'] = 200;
+        $response['sqs'] = $sqs;
+        return response()->json($response);
     }
     public function getSqsByIdServer($id)
     {
