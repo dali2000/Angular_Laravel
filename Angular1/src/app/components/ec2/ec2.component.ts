@@ -35,9 +35,10 @@ export class Ec2Component implements OnInit {
 
     this.dataService.addServer(this.server).subscribe(res => {
       this.data = res;
-      console.log(this.data.server.id);
-      this.ec2form.idServer = this.data.server.id;
+      console.log(this.data);
       this.message = this.data.message;
+      this.ec2form.idServer = this.data.server.id;
+      this.ec2form.ServerName = this.server.name;
     });
 
   }
