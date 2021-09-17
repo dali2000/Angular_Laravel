@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\Environment\Console;
 
+use function PHPUnit\Framework\isNull;
+
 class ServerController extends Controller
 {
     public function getServers()
@@ -25,10 +27,23 @@ class ServerController extends Controller
     }
     public function addServer(Request $request)
     {
-        $server = Server::create($request->all());
-        $response['message'] = 'server Added';
-        $response['code'] = 200;
-        $response['server'] = $server;
+
+        $server = Server::where('name', $request['name'])->first();
+        
+        if($server){
+            $response['status'] = 0;
+            $response['message'] = 'this server already exist';
+            $response['code'] = 409;
+        }
+        else{
+            $server = Server::create([
+                'name' => $request->name,
+            ]);
+            $response['message'] = 'server Added';
+            $response['code'] = 200;
+            $response['server'] = $server;
+            
+        }
         return response()->json($response);
     }
     public function getServerById($id)
@@ -77,5 +92,19 @@ class ServerController extends Controller
             return response()->json(Ec3::find($cdn.$id), 200);
     }
     
+
+    public function updateServer(Request $request, $id)
+    {
+        $s = Server::find($id);
+        if (is_null($s)) {
+            return response()->json(['message' => 'server not found'], 404);
+        }
+        $s->update($request->all());
+        
+        $response['message'] = 'updated with success';
+        $response['code'] = 200;
+        $response['s'] = $s;
+        return response()->json($response);
+    }
 
 }

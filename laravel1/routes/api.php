@@ -85,3 +85,6 @@ Route::post('login', 'LoginController@login');
 
 
 Route::post('login1' , 'UserController@login');
+
+
+Route::post('updateServer/{id}','ServerController@updateServer');
