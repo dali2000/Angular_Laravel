@@ -19,6 +19,7 @@ export class Ec2Component implements OnInit {
   }
   ec: any;
   id2: null
+  token:any;
   public ec2form = {
     
     idServer:null ,
@@ -66,6 +67,11 @@ export class Ec2Component implements OnInit {
     this.dataService.currentId.subscribe(id =>this.id =id)
     this.getEc3();
     console.log(this.id)
+    
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
   }
   newId(){
     this.dataService.changeId(this.ec2form.idServer);

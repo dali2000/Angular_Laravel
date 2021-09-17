@@ -17,6 +17,7 @@ export class S3EditComponent implements OnInit {
   id: number;
   id2: null
   data1:any
+  token:any;
   message = ""
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -36,6 +37,10 @@ export class S3EditComponent implements OnInit {
       this.message = this.data1.message
       console.log(this.message)
     });
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
     
   }
 

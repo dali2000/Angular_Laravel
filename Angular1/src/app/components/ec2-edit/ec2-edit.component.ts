@@ -16,11 +16,15 @@ export class Ec2EditComponent implements OnInit {
   id2: null
   data:any
   message = ""
+  token:any;
   public ec2 = new Ec2();
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.getEc3();
-
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
   }
 
 

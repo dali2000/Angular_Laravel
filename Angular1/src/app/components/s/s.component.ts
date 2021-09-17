@@ -12,6 +12,7 @@ export class SComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
   id: number;
   data: any;
+  token:any;
 
   public s = new Sqs()
 
@@ -20,6 +21,11 @@ export class SComponent implements OnInit {
     this.data = this.id;
     this.s.idServer = this.data;
     console.log(this.s)
+    
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
 
   }
   go(cmp) {

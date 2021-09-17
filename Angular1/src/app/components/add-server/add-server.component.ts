@@ -16,6 +16,7 @@ export class AddServerComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
+    
   }
   go(cmp) {
     this.router.navigate(['addServer/' + cmp])

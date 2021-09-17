@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Server } from 'src/app/server';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-serv',
   templateUrl: './serv.component.html',
   styleUrls: ['./serv.component.css']
 })
 export class ServComponent implements OnInit {
-  constructor(private dataService:DataService) { }
+  constructor(private dataService:DataService,private router: Router) { }
  
   server : any;
   data2:any;
-
+  token:any;
   data: any;
   se1 = new Server();
 
@@ -41,7 +42,11 @@ export class ServComponent implements OnInit {
   id :number;
   ngOnInit(): void {
     this.getServers();
-    this.dataService.currentId.subscribe(id =>this.id =id)
+    this.dataService.currentId.subscribe(id =>this.id =id);
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
 
   }
   DeleteServer(id){

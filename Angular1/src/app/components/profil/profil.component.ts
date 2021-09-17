@@ -20,6 +20,9 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
     this.user = jwtDecode(this.token);
     console.log(this.token);
     

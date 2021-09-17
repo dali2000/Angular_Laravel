@@ -20,11 +20,17 @@ export class S3Component implements OnInit {
   public s3 = new S3();
   data: any
   id: number;
+  token:any;
   ngOnInit(): void {
     this.dataService.currentId.subscribe(id => this.id = id)
     this.data = this.id;
     this.s3.idServer = this.data;
     console.log(this.s3)
+
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
   }
 
   go(cmp) {

@@ -17,10 +17,15 @@ export class SEditComponent implements OnInit {
   id2: null
   data:any
   message = ""
+  token:any;
   public s = new Sqs();
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.getSqsById();
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
   }
 
   getSqsById(){

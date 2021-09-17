@@ -3,6 +3,7 @@ import { Server } from 'src/app/server';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { Ec2 } from 'src/app/ec2';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-preview-server',
   templateUrl: './preview-server.component.html',
@@ -10,11 +11,12 @@ import { Ec2 } from 'src/app/ec2';
 })
 export class PreviewServerComponent implements OnInit {
 
-  constructor(private dataService:DataService,private route: ActivatedRoute) { }
+  constructor(private dataService:DataService,private route: ActivatedRoute,private router: Router) { }
   server : any;
   ec2: any;
   cdn : any;
   sqs : any;
+  token:any;
   s = new Server();
   
   id:any;
@@ -27,6 +29,10 @@ export class PreviewServerComponent implements OnInit {
     this.getS3ByIdServer();
     this.getSqsByIdServer();
     this.getServerById();
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
   }
 
   getServerById(){

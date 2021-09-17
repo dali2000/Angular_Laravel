@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -7,10 +8,15 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class UserComponent implements OnInit {
   user:any;
-  constructor(private dataService:DataService) { }
+  token:any;
+  constructor(private dataService:DataService,private router: Router) { }
 
   ngOnInit(): void {
     this.getUserData();
+    this.token = localStorage.getItem('token');
+    if(this.token == null){
+      this.router.navigate((['/login']))
+    }
   }
 
   getUserData(){
