@@ -39,9 +39,7 @@ export class Ec2Component implements OnInit {
       this.ec2form.idServer = this.data.server.id;
       this.message = this.data.message;
     });
-    if(this.server.name==null){
-      this.message ='plz add a server name'
-    }
+
   }
   
   go(cmp) {

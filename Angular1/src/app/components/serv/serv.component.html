@@ -9,6 +9,8 @@
                     <tr>
                         <th>#</th>
                         <th>name</th>
+                        <th>Created At</th>
+                        
                         <th>Action</th>
                         
                     </tr>
@@ -17,7 +19,8 @@
                     <tr *ngFor="let us of server">
                         <th scope="row">{{ us.id }}</th>
                         <td>{{ us.name }}</td>
-    
+                        
+                        <td>{{ us.created_at }}</td>
                         <td>
                             <button class="btn btn-danger btn-sm" (click)="DeleteServer(us.id)" id="btn1">Delete <i class='bx bx-trash'></i></button>
 

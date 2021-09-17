@@ -17,8 +17,9 @@
             </tbody>
         </table>
         <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;" *ngFor="let us of ec2">
+            <div class="col-md-4">
+                <h3>Ec2</h3>
+                <div class="card c"  *ngFor="let us of ec2">
 
                     <div class="card-body">
                         <h6>Server Name</h6>
@@ -50,8 +51,9 @@
             </div>
 
 
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;" *ngFor="let cd of cdn">
+            <div class="col-md-4">
+                <h3>S3/CDN</h3>
+                <div class="card c"  *ngFor="let cd of cdn">
 
                     <div class="card-body">
 
@@ -77,8 +79,10 @@
                 </div>
 
             </div>
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;" *ngFor="let sq of sqs">
+            <br>
+            <div class="col-md-4">
+                <h3>SQS</h3>
+                <div class="card c"  *ngFor="let sq of sqs">
 
                     <div class="card-body">
                         <h6>Quere_Name: </h6>

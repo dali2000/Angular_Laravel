@@ -1,0 +1,15 @@
+.c{
+    width: 14rem;
+}
+@media only screen and (max-width: 540px) {
+    .c{
+        width: 13rem;
+    }
+}
+@media only screen and (max-width:600 px) {
+    .c{
+        width: 16rem;
+    }
+}
+
+

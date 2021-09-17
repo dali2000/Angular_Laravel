@@ -21,12 +21,14 @@ export class ServComponent implements OnInit {
     this.dataService.getServers().subscribe(res =>{
       this.data2 = res;
       this.server = this.data2.server
+      console.log(this.server)
     });
   }
 
   public server1 = {
     id: null,
-    name: null
+    name: null,
+    
   };
   add1() {
     

@@ -1,5 +1,7 @@
 <app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
+    <button type="button" class="btn btn-primary r" id="btn2" routerLink="/preview/{{s3.idServer}}"><i
+            class='bx bx-left-arrow-alt'></i></button>
     <div class="box">
         <h3>S3/CDN</h3>
         <div class="card-body">
@@ -42,22 +44,22 @@
                     </div>
                 </div>
                 <br>
-    
-    
-    
-    
+
+
+
+
                 <div class="row justify-content-between">
 
-    
-    
+
+
                     <div class="col-sm-4">
-                     
-                            <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3form.valid" (click)="updateCdn(s3)" id="btn2"
-                            >Save <i class='bx bxs-save'></i></button>
-                       
+
+                        <button type="button" class="btn btn-primary" id="btnsign" [disabled]="!s3form.valid"
+                            (click)="updateCdn(s3)" id="btn2">Save <i class='bx bxs-save'></i></button>
+
                     </div>
                 </div>
-    
+
             </form>
         </div>
     </div>

@@ -1,4 +1,7 @@
-
+.r{
+  border-radius: 50%;
+  height:6%;
+}
 #btn1 {
     background-color: black;
     color: white;

@@ -1,7 +1,12 @@
 <app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
     <br>
+    
+        <button type="button" class="btn btn-primary r" id="btn2" 
+        routerLink="/preview/{{ec2form.idServer}}"><i class='bx bx-left-arrow-alt'></i></button>
+    
     <div class="box">
+        <h3>Ec2</h3>
         <div class="alert alert-success" [hidden]="!message">
             {{message}}
         </div>

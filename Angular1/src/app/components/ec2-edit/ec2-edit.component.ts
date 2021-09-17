@@ -16,6 +16,9 @@ export class Ec2EditComponent implements OnInit {
   id2: null
   data:any
   message = ""
+  data2:any;
+  id3:any
+
   token:any;
   public ec2 = new Ec2();
   ngOnInit(): void {
@@ -25,6 +28,7 @@ export class Ec2EditComponent implements OnInit {
     if(this.token == null){
       this.router.navigate((['/login']))
     }
+    
   }
 
 
@@ -37,7 +41,9 @@ export class Ec2EditComponent implements OnInit {
     Firwall: null,
     Machine: null
   };
-
+  Server = {
+    serverName:null
+  }
 
 
   getEc3() {
@@ -46,23 +52,43 @@ export class Ec2EditComponent implements OnInit {
       this.ec = res;
       this.ec2form = this.ec;
       this.id2 = this.ec2form.idServer
+      
+      this.getServerById();
     });
-    console.log(this.id);
+    
+    
   }
-
+  getServerById(){
+    this.dataService.getServerById(this.ec2form.idServer).subscribe(res => {
+      
+      this.data2 = res
+      console.log(this.data2)
+    })
+  }
   update() {
     
     console.log(this.ec2form);
+    this.id3 =this.ec2form.idServer;
+    this.data2.name = this.ec2form.ServerName;
+    this.dataService.updateServer(this.ec2form.idServer,this.data2).subscribe(res=> {
+      console.log(res);
+    });
+    console.log(this.data2)
     this.dataService.updateEc3(this.id, this.ec2form).subscribe(res => {
-      this.data = res;
+      this.data = res
+      this.data2 = this.data;
       this.message = this.data.message
       console.log(this.message)
 
     });
-    
-    console.log(this.ec2form);
+
   }
-  go() {
-    // console.log('hello2');
+  updateServer(){
+    this.dataService.updateServer(this.ec2form.idServer,this.Server).subscribe(res=> {
+      console.log(res);
+    })
   }
+  // go() {
+  //   // console.log('hello2');
+  // }
 }
