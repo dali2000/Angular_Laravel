@@ -49,9 +49,7 @@ export class LoginComponent implements OnInit {
   handleError(error){
     this.error = error.error.error;
   }
-  // newUser(){
-  //   this.dataService.changeUser(this.user)
-  // }
+
 
   getdata(){
     this.dataService.getUserById(this.user.user_id).subscribe(res => {

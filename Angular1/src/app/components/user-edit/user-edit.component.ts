@@ -33,11 +33,16 @@ export class UserEditComponent implements OnInit {
     })
   }
   updateUser() {
+    if(this.user1.password==null){
+      this.message = "must put your password"
+    }else{
     this.dataService.updateUser(this.id, this.user1).subscribe(res => {
         this.data = res;
         this.message = this.data.message
         console.log(this.message)
+        console.log(res)
     });
+  }
   }
 
 }

@@ -20,18 +20,18 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
-    if(this.token == null){
+    if(this.token == null){ 
       this.router.navigate((['/login']))
     }
-    this.user = jwtDecode(this.token);
-    console.log(this.token);
+    this.user = jwtDecode(this.token);    
+    // console.log(this.token);
     
     this.getdata();
   }
   getdata(){
     this.dataService.getUserById(this.user.user_id).subscribe(res => {
       this.user1 = res;
-      console.log(this.user1.password)
+     
       if(this.user1.role == "admin"){
         this.test = false;
         
@@ -51,7 +51,7 @@ export class ProfilComponent implements OnInit {
       this.dataService.updateUser(this.user1.id, this.user1).subscribe(res => {
         this.data = res;
         this.message = this.data.message
-        console.log(this.message)
+       
         this.toggle();
     });
     }

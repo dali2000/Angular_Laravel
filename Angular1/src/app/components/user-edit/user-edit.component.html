@@ -28,6 +28,18 @@
                     </div>
     
                 </div>
+
+                <div class="row form-group">
+                    <div class="col-md">
+                        <label for="">Type of User</label>
+                        <select name="role" id="" class="form-control" [(ngModel)]="user1.role"
+                            [ngModelOptions]="{standalone: true}" required>
+                            <option value="admin">Admin</option>
+                            <option value="user">Simple User</option>
+
+                        </select>
+                    </div>
+                </div>
                 <div class="row form-group">
                     <div class="col-md">
                         <label for="">password</label>

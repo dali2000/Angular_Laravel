@@ -54,5 +54,6 @@ export class S3EditComponent implements OnInit {
     });
     console.log(this.id)
   }
+  
 
 }

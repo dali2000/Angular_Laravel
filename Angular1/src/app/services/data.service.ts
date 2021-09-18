@@ -10,7 +10,7 @@ export class DataService {
   constructor(private httpClient: HttpClient) { }
 
 
-  //user
+  //user CRUD
   getDataUser() {
     return this.httpClient.get('http://127.0.0.1:8000/users');
   }
@@ -30,17 +30,10 @@ export class DataService {
     return this.httpClient.post('http://127.0.0.1:8000/login1/', data)
   }
 
-  //s3
-  addCdn(data) {
-    return this.httpClient.post('http://127.0.0.1:8000/addCdn', data);
-  }
-  addec2(data) {
-    return this.httpClient.post('http://127.0.0.1:8000/addEc3', data);
-  }
-  addSqs(data) {
-    return this.httpClient.post('http://127.0.0.1:8000/addSqs', data);
-  }
 
+
+
+// Server CRUD
   addServer(data) {
     return this.httpClient.post('http://127.0.0.1:8000/addServer', data);
   }
@@ -54,43 +47,70 @@ export class DataService {
   deleteServerData(id) {
     return this.httpClient.delete('http://127.0.0.1:8000/DeleteServer/' + id);
   }
-  getEc3ByIdServer(id) {
-    return this.httpClient.get('http://127.0.0.1:8000/getEc3ByIdServer/' + id)
-  }
-  updateEc3(id, data) {
-    return this.httpClient.post('http://127.0.0.1:8000/updateEc3/' + id, data);
-  }
+
   updateServer(id, data) {
     return this.httpClient.post('http://127.0.0.1:8000/updateServer/' + id, data);
   }
 
-  getS3ByIdServer(id) {
-    return this.httpClient.get('http://127.0.0.1:8000/getS3ByIdServer/' + id);
-  }
-  getSqsByIdServer(id) {
-    return this.httpClient.get('http://127.0.0.1:8000/getSqsByIdServer/' + id);
-  }
-  getS3ById(id) {
-    return this.httpClient.get('http://127.0.0.1:8000/getS3ById/' + id);
+
+// Ec2 CRUD
+  addec2(data) {
+    return this.httpClient.post('http://127.0.0.1:8000/addEc3', data);
   }
   getEc3ById(id) {
     return this.httpClient.get('http://127.0.0.1:8000/getEc3ById/' + id);
   }
-  getSqsById(id) {
-    return this.httpClient.get('http://127.0.0.1:8000/getSqsById/' + id);
+  updateEc3(id, data) {
+    return this.httpClient.post('http://127.0.0.1:8000/updateEc3/' + id, data);
+  }
+  getEc3ByIdServer(id) {
+    return this.httpClient.get('http://127.0.0.1:8000/getEc3ByIdServer/' + id)
+  }
+
+// S3 CRUD
+  getS3ByIdServer(id) {
+    return this.httpClient.get('http://127.0.0.1:8000/getS3ByIdServer/' + id);
+  }
+  addCdn(data) {
+    return this.httpClient.post('http://127.0.0.1:8000/addCdn', data);
+  }
+  getS3ById(id) {
+    return this.httpClient.get('http://127.0.0.1:8000/getS3ById/' + id);
   }
   updateS3(id, data) {
     return this.httpClient.post('http://127.0.0.1:8000/updateS3/' + id, data);
   }
+
+
+// SQS CRUD
+  addSqs(data) {
+    return this.httpClient.post('http://127.0.0.1:8000/addSqs', data);
+  }
+
+  getSqsById(id) {
+    return this.httpClient.get('http://127.0.0.1:8000/getSqsById/' + id);
+  }
+  getSqsByIdServer(id) {
+    return this.httpClient.get('http://127.0.0.1:8000/getSqsByIdServer/' + id);
+  }
   updateSqs(id, data) {
     return this.httpClient.post('http://127.0.0.1:8000/updateSqs/' + id, data)
   }
-  getNbS() {
-    return this.httpClient.get('http://127.0.0.1:8000/nbS');
-  }
-  getNbU() {
-    return this.httpClient.get('http://127.0.0.1:8000/nbU');
-  }
+
+// Stats
+getNbS() {
+  return this.httpClient.get('http://127.0.0.1:8000/nbS');
+}
+getNbU() {
+  return this.httpClient.get('http://127.0.0.1:8000/nbU');
+}
+
+
+
+
+
+
+
 
   public user = {
     id: "",
@@ -101,17 +121,15 @@ export class DataService {
     last_name:""
   }
   private idSaurce = new BehaviorSubject<number>(1);
-  private userSaurce = new BehaviorSubject<any>(this.user);
+ 
   currentId = this.idSaurce.asObservable();
-  currentUser = this.userSaurce.asObservable();
+  
 
 
 
   changeId(id: number) {
     this.idSaurce.next(id);
   }
-  changeUser(user1: object) {
-    this.userSaurce.next(user1)
-  }
+
 
 }
