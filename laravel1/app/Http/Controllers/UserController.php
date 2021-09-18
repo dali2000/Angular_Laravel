@@ -97,7 +97,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
 
         $user->save();
-        $response['message'] = 'user Updated';
+        $response['message'] = 'Updated with success';
         $response['code'] = 200;
         $response['user'] = $user;
 
