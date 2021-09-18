@@ -1,7 +1,9 @@
 <app-sidebar></app-sidebar>
+<br>
 <div [ngClass]="{'home':true}">
-    <div >
-
+    <div style="margin: 15px;">
+        <input type="text" class="form-control" name="Name" [(ngModel)]="first_name" (ngModelChange)="Search()"
+        placeholder="Enter Server Name To search">
         <table class="table table-striped " >
             <thead>
                 <tr>

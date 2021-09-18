@@ -1,8 +1,11 @@
 <app-sidebar></app-sidebar>
 <div class="container">
-
+<br>
     <div [ngClass]="{'home':true}">
         <div style="margin: 15px;">
+            <input type="text" class="form-control" name="Name" [(ngModel)]="name" (ngModelChange)="Search()"
+            placeholder="Enter Server Name To search">
+            
             <table class="table table-striped ">
     
                 <thead>

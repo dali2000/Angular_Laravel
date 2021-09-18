@@ -66,6 +66,19 @@ export class ServComponent implements OnInit {
     });
   }
 
+  name = ""
+
+  Search(){
+    if(this.name == ""){
+      this.ngOnInit();
+    }
+    else{
+      this.server = this.server.filter(res => {
+        return res.name.toLocaleLowerCase().match(this.name.toLowerCase());
+      })
+    }
+  }
+
 }
 
 

@@ -30,4 +30,16 @@ export class UserComponent implements OnInit {
       this.getUserData();
     });
   }
+  
+  first_name = ""
+  Search(){
+    if(this.first_name == ""){
+      this.ngOnInit();
+    }
+    else{
+      this.user = this.user.filter(res => {
+        return res.first_name.toLocaleLowerCase().match(this.first_name.toLowerCase());
+      })
+    }
+  }
 }
