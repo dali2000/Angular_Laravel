@@ -31,26 +31,30 @@ export class ProfilComponent implements OnInit {
   getdata(){
     this.dataService.getUserById(this.user.user_id).subscribe(res => {
       this.user1 = res;
+      console.log(this.user1.password)
       if(this.user1.role == "admin"){
         this.test = false;
-        console.log(this.test)
-      }
-      else{
-        console.log(this.test)
+        
       }
 
-      console.log(this.user1);
+
+      
     })
+    
   }
 
 
   updateUser() {
-    this.dataService.updateUser(this.user1.id, this.user1).subscribe(res => {
+    if(this.user1.password==null){
+      this.message = "must put your password"
+    }else{
+      this.dataService.updateUser(this.user1.id, this.user1).subscribe(res => {
         this.data = res;
         this.message = this.data.message
         console.log(this.message)
         this.toggle();
     });
+    }
   }
 
   public toggle(){
@@ -64,6 +68,6 @@ export class ProfilComponent implements OnInit {
       
       
     }
-    console.log(this.is)
+   
   }
 }

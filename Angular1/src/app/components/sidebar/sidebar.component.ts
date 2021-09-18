@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
   user1:any;
   token:any;
   test = true;
-  email = null;
+  name = null;
   role = null;
   ngOnInit(): void {
     
@@ -44,7 +44,7 @@ export class SidebarComponent implements OnInit {
   getdata(){
     this.dataService.getUserById(this.user.user_id).subscribe(res => {
       this.user1 = res;
-      this.email = this.user1.email
+      this.name = this.user1.first_name +" " +this.user1.last_name;
       this.role = this.user1.role
       if(this.user1.role == "admin"){
         this.test = false;

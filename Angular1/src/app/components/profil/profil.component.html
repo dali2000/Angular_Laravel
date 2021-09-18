@@ -20,7 +20,7 @@
             <br>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="alert alert-success" [hidden]="!message">{{message}}</div>
+                    <div class="alert alert-info" [hidden]="!message">{{message}}</div>
                 </div>
             </div>
             <div class="row">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-md-6" [hidden]="!is">
                     <h3 style="color: rgb(213, 213, 213);margin-top: 10px;">Password</h3>
-                    <input type="password" [(ngModel)]="user1.password" class="form-control" [disabled]="!is" >
+                    <input type="password" [(ngModel)]="user1.password" class="form-control" [disabled]="!is"  required>
                 </div>
 
             </div>
