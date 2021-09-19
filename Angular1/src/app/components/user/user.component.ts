@@ -10,6 +10,8 @@ export class UserComponent implements OnInit {
   user: any;
   token: any;
   role = "all"
+  is = false
+  is1 = false
   constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -35,9 +37,11 @@ export class UserComponent implements OnInit {
   first_name = ""
   Search() {
     if (this.first_name == "") {
-      
+      this.is = false
+      this.ngOnInit()
     }
     else {
+      this.is = true
       this.user = this.user.filter(res => {
         return res.first_name.toLocaleLowerCase().match(this.first_name.toLowerCase());
       })
@@ -48,20 +52,24 @@ export class UserComponent implements OnInit {
   }
   user1:any
   SearchRole(){
-    
-    if (this.role == "all") {
+if (this.role == "all") {
       this.ngOnInit()
-      this.user1 = this.user
-      
+      this.is1 = false
+      console.log(this.is1)
     } else if(this.role == "admin") {
+      this.is1 = true
+      console.log(this.is1)
       this.user1 = this.user;
       this.user = this.user.filter(res => {
         return res.role.match("admin");
+        
       })
       
     }
     else{
       this.user = this.user1
+      this.is1 = true
+      console.log(this.is)
         this.user = this.user.filter(res => {
           return res.role.match("user");
         })
