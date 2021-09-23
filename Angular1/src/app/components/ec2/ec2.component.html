@@ -1,15 +1,17 @@
 <app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
+    <h1>Add Server</h1>
     <div class="box">
         <div class="row">
             <form #Form="ngForm" (ngSubmit)="add1()">
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-md-8">
                         <input type="text" class="form-control" placeholder="Server Name" name="name"
                             [(ngModel)]="server.name" [ngModelOptions]="{standalone: true}" required>
                     </div>
-                    <div class="col-sm-2">
-                        <input type="submit" class="btn btn-primary" value="Add Server" id="btn2" [disabled]='!server.name'>
+                    <br>
+                    <div class="col-md-4" >
+                        <input type="submit" class="btn btn-primary" value="Add Server" id="btn2" [disabled]='!server.name' >
 
                     </div>
                 </div>

@@ -16,6 +16,7 @@ export class SidebarComponent implements OnInit {
   test = true;
   name = null;
   role = null;
+  test2 = true;
   ngOnInit(): void {
     
     this.token = localStorage.getItem('token');
@@ -23,6 +24,7 @@ export class SidebarComponent implements OnInit {
     console.log(this.token);
     console.log(this.user);
     this.getdata();
+
 
   }
   public check =true
@@ -46,13 +48,13 @@ export class SidebarComponent implements OnInit {
       this.user1 = res;
       this.name = this.user1.first_name +" " +this.user1.last_name;
       this.role = this.user1.role
+
       if(this.user1.role == "admin"){
         this.test = false;
+    
         // console.log(this.test)
       }
-      // else{
-      //   console.log(this.test)
-      // }
+
 
    
     })

@@ -1,4 +1,4 @@
-    <div [ngClass]="{'sidebar':true,'active':check}"  style="z-index: 1000;">
+    <div [ngClass]="{'sidebar':true,'active':check}"  style="z-index: 1000;"  >
         <div class="log_content">
             <div class="logo" >
                 <i class='bx bx-qr-scan' style="color: white;"></i>
@@ -6,7 +6,7 @@
             </div>
             <i class='bx bx-menu-alt-left' id="btn" (click)="toggle()"  ></i>
         </div>
-        <ul class="nav_list">
+        <ul class="nav_list" >
             <li >
                 <a routerLink="/profil" >
                     <i class='bx bx-user' style="color: rgb(81, 136, 247);"></i>
@@ -14,7 +14,7 @@
                 </a>
                 <span class="tool">Dashbored</span>
             </li>
-            <li *ngIf="!test">
+            <li *ngIf="!test" >
                 <a routerLink="/dashbored" >
                     <i class='bx bx-grid-alt' style="color: rgb(81, 136, 247);"></i>
                     <span class="links_name">Dashbored</span>
@@ -52,7 +52,7 @@
                 <span class="tool">Add User</span>
             </li>
         </ul>
-        <div class="profile_content">
+        <div class="profile_content" >
             <div class="profile">
                 <div class="profile_details">
                     <div class="name_job">

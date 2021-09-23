@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
         this.user = jwtDecode(this.token);
         this.getdata();
         
+
+        
       }else{
         this.router.navigate((['/login']))
       }
