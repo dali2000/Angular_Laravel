@@ -44,6 +44,8 @@
 #btnS{
     margin-top: 50px;
     width:253px;
+    background-color: #080433;
+    border: #080433;
 }
 .ng-invalid:not(form){
     border-left:5px solid rgb(237, 241, 251);
