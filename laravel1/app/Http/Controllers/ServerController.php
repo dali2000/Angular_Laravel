@@ -39,6 +39,7 @@ class ServerController extends Controller
             $server = Server::create([
                 'name' => $request->name,
             ]);
+            $response['status'] = 1;
             $response['message'] = 'server Added';
             $response['code'] = 200;
             $response['server'] = $server;
