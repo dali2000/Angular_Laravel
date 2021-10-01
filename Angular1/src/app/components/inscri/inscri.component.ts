@@ -33,14 +33,19 @@ export class InscriComponent implements OnInit {
       this.router.navigate((['/login']))
     }
   }
-
+alert = ""
   add(){
    console.log(this.form)
     this.dataService.submit(this.form).subscribe(res =>{
       console.log(res);
       this.data = res;
       this.message = this.data.message;
-
+      if(this.data.status == 0){
+        this.alert = "alert alert-danger"
+      }
+      else{
+        this.alert = "alert alert-success"
+      }
 
     });
 

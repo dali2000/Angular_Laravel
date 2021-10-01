@@ -20,12 +20,16 @@ export class UserComponent implements OnInit {
     if (this.token == null) {
       this.router.navigate((['/login']))
     }
+    
+
   }
 
   getUserData() {
     this.dataService.getDataUser().subscribe(res => {
       this.user = res;
+
     });
+    
   }
 
   deleteData(id) {
@@ -46,35 +50,44 @@ export class UserComponent implements OnInit {
         return res.first_name.toLocaleLowerCase().match(this.first_name.toLowerCase());
       })
     }
-    
+
 
 
   }
-  user1:any
-  SearchRole(){
-if (this.role == "all") {
+  email2 = "admin@gmail.com"
+  recherche() {
+    if(this.user.email == this.email2){
+      this.user = this.user.filter(res => {
+        return !res.email.match(this.email2);
+      })
+    }
+
+  }
+  user1: any
+  SearchRole() {
+    if (this.role == "all") {
       this.ngOnInit()
       this.is1 = false
       console.log(this.is1)
-    } else if(this.role == "admin") {
+    } else if (this.role == "admin") {
       this.is1 = true
       console.log(this.is1)
       this.user1 = this.user;
       this.user = this.user.filter(res => {
         return res.role.match("admin");
-        
+
       })
-      
+
     }
-    else{
+    else {
       this.user = this.user1
       this.is1 = true
       console.log(this.is)
-        this.user = this.user.filter(res => {
-          return res.role.match("user");
-        })
+      this.user = this.user.filter(res => {
+        return res.role.match("user");
+      })
 
-      
+
     }
   }
 }

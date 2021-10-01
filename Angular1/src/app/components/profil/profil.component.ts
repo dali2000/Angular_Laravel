@@ -56,17 +56,25 @@ export class ProfilComponent implements OnInit {
     });
     }
   }
-
+  val = "Edit"
+  icon = "bx bxs-edit"
+  btn = "btn btn-outline-primary sub"
+  id = ""
   public toggle(){
     if(this.is==true){
       
       this.is=false;
-
+      this.val = "Edit"
+      this.icon = "bx bxs-edit"
+      this.btn = "btn btn-outline-primary sub"
+      this.id = "btnS"
     }
     else{
       this.is=true
-      
-      
+      this.val = "Annuler"
+      this.icon = "bx bx-x"
+      this.btn = "btn btn-outline-primary sub"
+      this.id = "btn1"
     }
    
   }

@@ -31,6 +31,7 @@ export class Ec2Component implements OnInit {
   };
   public message =""
   public data : any;
+  alert = "alert alert-danger"
   add1() {
 
     this.dataService.addServer(this.server).subscribe(res => {
@@ -39,6 +40,13 @@ export class Ec2Component implements OnInit {
       this.message = this.data.message;
       this.ec2form.idServer = this.data.server.id;
       this.ec2form.ServerName = this.server.name;
+      if(this.data.status == 1){
+        this.alert="alert alert-success"
+      }
+      else{
+        this.alert = "alert alert-danger"
+        
+      }
     });
 
   }

@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     // this.dataService.currentUser.subscribe(user1 => this.user = user1)
   }
+alert = ""
+icon = ""
 
   login(){
     // console.log(this.form);
@@ -30,6 +32,14 @@ export class LoginComponent implements OnInit {
       console.log(res);
       this.data = res;
       this.message = this.data.message
+      if(this.data.status == 0 ){
+        this.alert = "alert alert-danger"
+        this.icon = "bx bxs-error"
+      }
+      else{
+        this.alert = "alert alert-success"
+        this.icon = "bx bx-check-shield"
+      }
       // error => this.handleError(error);
       // this.newUser();
       if(this.data.status ===1){

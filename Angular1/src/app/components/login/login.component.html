@@ -20,8 +20,8 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="form.password"
               [ngModelOptions]="{standalone: true}" required name="password">
-            <div style="color: rgb(167, 23, 23);" [hidden]="!message">
-              <i class='bx bxs-error'></i>&nbsp;{{message}}
+            <div class="{{alert}}" [hidden]="!message">
+              <i class='{{icon}}'></i>&nbsp;{{message}}
             </div>
 
           </div>

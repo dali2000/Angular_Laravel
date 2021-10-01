@@ -34,6 +34,12 @@ export class SComponent implements OnInit {
   add(s) {
     this.dataService.addSqs(s).subscribe(res => {
       console.log(res);
+      if(res != ""){
+        this.router.navigate((['/preview/',this.s.idServer]))
+      }
+      else{
+        this.router.navigate((['/addServer/ec2']))
+      }
     });
     
   }
