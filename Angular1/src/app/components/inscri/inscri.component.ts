@@ -29,9 +29,9 @@ export class InscriComponent implements OnInit {
       this.messageAlert=""
     }
     this.token = localStorage.getItem('token');
-    if(this.token == null){
-      this.router.navigate((['/login']))
-    }
+    // if(this.token == null){
+    //   this.router.navigate((['/login']))
+    // }
   }
 alert = ""
   add(){

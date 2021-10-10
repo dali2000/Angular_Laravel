@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Router, RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-
+import jwtDecode from 'jwt-decode';
 import { Server } from 'src/app/server';
 
 @Component({
@@ -15,11 +15,14 @@ export class Ec2Component implements OnInit {
   constructor(private dataService: DataService, private router: Router,private route: ActivatedRoute) { }
 
   public server = {
+    idUser:null,
     name: null
+    
   }
   ec: any;
   id2: null
   token:any;
+  user : any;
   public ec2form = {
     
     idServer:null ,
@@ -33,13 +36,15 @@ export class Ec2Component implements OnInit {
   public data : any;
   alert = "alert alert-danger"
   add1() {
-
+    this.server.idUser = this.user1.id
+    console.log(this.server)
     this.dataService.addServer(this.server).subscribe(res => {
       this.data = res;
       console.log(this.data);
       this.message = this.data.message;
       this.ec2form.idServer = this.data.server.id;
       this.ec2form.ServerName = this.server.name;
+
       if(this.data.status == 1){
         this.alert="alert alert-success"
       }
@@ -76,6 +81,10 @@ export class Ec2Component implements OnInit {
     console.log(this.id)
     
     this.token = localStorage.getItem('token');
+    this.user = jwtDecode(this.token);    
+    // console.log(this.user);
+    
+    this.getdata();
     if(this.token == null){
       this.router.navigate((['/login']))
     }
@@ -101,5 +110,12 @@ export class Ec2Component implements OnInit {
       this.id2 = this.ec2form.idServer
     });
     console.log(this.id);
+  }
+
+  user1 : any
+  getdata(){
+    this.dataService.getUserById(this.user.user_id).subscribe(res => {
+      this.user1 = res;
+    })
   }
 }

@@ -37,7 +37,9 @@ export class DataService {
   addServer(data) {
     return this.httpClient.post('http://127.0.0.1:8000/addServer', data);
   }
-
+  getServersByUser(id) {
+    return this.httpClient.get('http://127.0.0.1:8000/getServersByUser/'+ id);
+  }
   getServers() {
     return this.httpClient.get('http://127.0.0.1:8000/getServers');
   }

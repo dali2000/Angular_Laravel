@@ -5,9 +5,17 @@
     <div [ngClass]="{'home':true}">
         <div style="margin: 15px;">
             <h1>Servers</h1>
-
-            <input type="text" class="form-control" name="Name" [(ngModel)]="name" (ngModelChange)="Search()"
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="Name" [(ngModel)]="name" (ngModelChange)="Search()"
             placeholder="Enter Server Name To search">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary r" id="btn2" 
+                    routerLink="/addServer/ec2"><i class='bx bxs-plus-circle'></i> Server</button>
+                </div>
+            </div>
+            
             
             <table class="table table-striped ">
     
@@ -35,7 +43,13 @@
                         </td>
                     </tr>
                 </tbody>
+             
             </table>
+            <br>
+            <div class="alert alert-danger" [hidden] =!message>
+                <p >{{message}}</p>
+            </div>
         </div>
+
     </div>
 </div>
