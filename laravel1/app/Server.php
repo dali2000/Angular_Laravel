@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Server extends Model
 {
     
-    protected $fillable = ['name'];
+    protected $fillable = ['idUser','name'];
 
     public function ec2()
     {
@@ -22,5 +22,9 @@ class Server extends Model
     public function cdn()
     {
         return $this->hasOne(cdn::class);
+    }
+    public function user()
+    {
+        return $this->hasOne(user::class);
     }
 }

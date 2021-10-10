@@ -71,6 +71,7 @@ Route::get('getSqsByIdServer/{id}', 'SqsController@getSqsByIdServer');
 //server
 Route::post('addServer', 'ServerController@addServer');
 Route::get('getServerById/{id}', 'ServerController@getServerById');
+Route::get('getServersByUser/{id}', 'ServerController@getServersByUser');
 Route::get('getServers', 'ServerController@getServers');
 Route::delete('DeleteServer/{id}', 'ServerController@DeleteServer');
 

@@ -12,14 +12,41 @@ use function PHPUnit\Framework\isNull;
 
 class ServerController extends Controller
 {
+    public function getServersByUser($id)
+    {   
+        $server = DB::table('servers')->where('idUser',$id)->get();
+        if(is_null($server)){
+            $response['message'] = 'you dont have any server';
+            $response['code'] = 204;
+            
+        }
+        else{
+           
+            $response['code'] = 200;
+            $response['server'] = $server;
+            
+        }
+        return response()->json($response);
+        
+    }
+
+
+
     public function getServers()
     {   
         $server = Server::all();
-        $response['message'] = 'server founded';
-        $response['code'] = 200;
-        $response['server'] = $server;
+        if(is_null($server)){
+            $response['message'] = 'not found';
+            $response['code'] = 204;
+            
+        }else{
+            $response['message'] = 'server founded';
+            $response['code'] = 200;
+            $response['server'] = $server;
+        }
+        
         return response()->json($response);
-        return response()->json(Server::all(), 200);
+        
     }
     public function nbS(){
         $count =  Server::all()->count();
@@ -37,7 +64,8 @@ class ServerController extends Controller
         }
         else{
             $server = Server::create([
-                'name' => $request->name,
+                'idUser' => $request->idUser,
+                'name' => $request->name
             ]);
             $response['status'] = 1;
             $response['message'] = 'server Added';
