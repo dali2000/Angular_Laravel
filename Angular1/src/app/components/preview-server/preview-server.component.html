@@ -1,6 +1,6 @@
 <app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
-    <div style="margin: 15px;">
+    <div style="margin: 15px;bac" >
         <table class="table">
             <thead>
                 <tr>
@@ -18,32 +18,32 @@
         </table>
         <div class="row">
             <div class="col-md-4">
-                <h3>Ec2</h3>
-                <div class="card c"  *ngFor="let us of ec2">
+                <h2>Ec2</h2>
+                <div class="card c"  *ngFor="let us of ec2" >
 
                     <div class="card-body">
-                        <h6>Server Name</h6>
+                        <h4>Server Name</h4>
                         <p class="card-title">{{us.ServerName}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <h6>Type</h6>
+                            <h4>Type</h4>
                             <p>{{us.Type}}</p>
                         </li>
                         <li class="list-group-item">
-                            <h6>Storage</h6>
+                            <h4>Storage</h4>
                             <p>{{us.Storage}}</p>
                         </li>
                         <li class="list-group-item">
-                            <h6>Firwall</h6>
+                            <h4>Firwall</h4>
                             <p>{{us.Firwall}}</p>
                         </li>
                         <li class="list-group-item">
-                            <h6>Machine</h6>
+                            <h4>Machine</h4>
                             <p>{{us.Machine}}</p>
                         </li>
                     </ul>
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: #080433">
                         <button class="btn btn-outline-primary"
                             routerLink="/addServer/ec2-edit/{{ us.id }}">Edit <i class='bx bxs-edit' ></i></button>
                     </div>
@@ -52,27 +52,27 @@
 
 
             <div class="col-md-4">
-                <h3>S3/CDN</h3>
+                <h2>S3/CDN</h2>
                 <div class="card c"  *ngFor="let cd of cdn">
 
                     <div class="card-body">
 
-                        <h6>PublicBucket: </h6>
+                        <h4>PublicBucket: </h4>
                         <p>{{cd.PublicBucket}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
 
                         <li class="list-group-item">
-                            <h6>Private Bucket:</h6>
+                            <h4>Private Bucket:</h4>
                             <p>{{cd.PrivateBucket}}</p>
                         </li>
                         <li class="list-group-item">
-                            <h6>Region: </h6>
+                            <h4>Region: </h4>
                             <p>{{cd.Region}}</p>
                         </li>
 
                     </ul>
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: #080433">
                         <button class="btn btn-outline-primary"
                             routerLink="/addServer/s3-edit/{{ cd.id }}">Edit <i class='bx bxs-edit' ></i></button>
                     </div>
@@ -81,23 +81,23 @@
             </div>
             <br>
             <div class="col-md-4">
-                <h3>SQS</h3>
+                <h2>SQS</h2>
                 <div class="card c"  *ngFor="let sq of sqs">
 
                     <div class="card-body">
-                        <h6>Quere_Name: </h6>
+                        <h4>Quere_Name: </h4>
                         <p>{{sq.Quere_Name}}</p>
 
                     </div>
                     <ul class="list-group list-group-flush">
 
                         <li class="list-group-item">
-                            <h6>Region</h6>
+                            <h4>Region</h4>
                             <p>{{sq.Region}}</p>
                         </li>
 
                     </ul>
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: #080433">
                         <button class="btn btn-outline-primary" routerLink="/addServer/s-edit/{{ sq.id }}">Edit <i class='bx bxs-edit' ></i></button>
                     </div>
                 </div>

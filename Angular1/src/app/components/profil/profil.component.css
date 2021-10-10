@@ -41,8 +41,8 @@
   }
 }
 #btn1 {
-  background-color: black;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: #080433;
   border: 1px solid black;
   margin-bottom: 10px;
   transition: all 0.5s;

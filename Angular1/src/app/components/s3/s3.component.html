@@ -1,6 +1,6 @@
 <app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
- <div class="box">
+ <div class="box"  style="background-color: #080433;color: white;">
         <h3>S3/CDN</h3>
         <div class="card-body">
             <!-- {{id}} -->
@@ -46,13 +46,13 @@
     
                 <div class="row justify-content-between">
                     <div class="col-sm-4">
-                        <button type="button" class="btn btn-primary" routerLink="" (click)="go('ec2')" id="btn2">Privous</button>
+                        <button type="button" class="btn btn-outline-primary" routerLink="" (click)="go('ec2')" id="btn2">Privous</button>
                     </div>
     
     
                     <div class="col-sm-4">
                         <a routerLink="" (click)="go('sqs')">
-                            <button type="button" class="btn btn-primary" id="btn1" [disabled]="!s3form.valid" (click)="addCdn()"
+                            <button type="button" class="btn btn-primary" id="" [disabled]="!s3form.valid" (click)="addCdn()"
                             >Next</button>
                         </a>
                     </div>

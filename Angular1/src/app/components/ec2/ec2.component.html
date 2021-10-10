@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 <div [ngClass]="{'home':true}">
     <h1>Add Server</h1>
-    <div class="box">
+    <div class="box" >
         <div class="row">
             <form #Form="ngForm" (ngSubmit)="add1()">
                 <div class="row">
@@ -28,7 +28,7 @@
         </div>
     </div>
     <br>
-    <div class="box">
+    <div class="box" style="background-color: #080433; color: white;">
         <form #ec2Form="ngForm" class="form-group">
             <div class="col">
                 <!-- <label for="">idServer</label> -->
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <a routerLink="" (click)="go('s3')">
-                        <button type="button" class="btn btn-primary" id="btn1" (click)="add()"
+                        <button type="button" class="btn btn-primary" id="" (click)="add()"
                             [disabled]="!ec2Form.valid">Next</button>
                     </a>
                 </div>
